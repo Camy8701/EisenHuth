@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heizungstechnik - Eisenhuth GmbH</title>
+    <meta name="description" content="Heizungstechnik von Eisenhuth GmbH: Zentralheizung, Fußbodenheizung, Wandheizung und Heizungswartung in Kassel.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0066CC',
+                        secondary: '#003D7A',
+                        accent: '#00A3E0'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://www.aura.build/FxFilter.js"></script>
+
+    <script>
+    (function () {
+        const style = document.createElement("style");
+        style.textContent = `
+            @keyframes animationIn {
+                from { opacity: 0; transform: translateY(40px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .animate-on-scroll { opacity: 0; }
+            .animate-on-scroll.animate { animation: animationIn 1s ease-out forwards; }
+            ::-webkit-scrollbar { width: 6px; }
+            ::-webkit-scrollbar-track { background: #0a0a0a; }
+            ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+            ::-webkit-scrollbar-thumb:hover { background: #555; }
+        `;
+        document.head.appendChild(style);
+        const once = true;
+        if (!window.__inViewIO) {
+            window.__inViewIO = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("animate");
+                        if (once) window.__inViewIO.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: "0px 0px -5% 0px" });
+        }
+        window.initInViewAnimations = function (selector = ".animate-on-scroll") {
+            document.querySelectorAll(selector).forEach((el) => {
+                window.__inViewIO.observe(el);
+            });
+        };
+        document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
+    })();
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            background-color: #20BA5A;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-200 overflow-x-hidden selection:bg-primary/20">
+
+    <div class="fixed top-0 w-full h-screen bg-gradient-to-br from-neutral-900 via-neutral-950 to-black -z-10"></div>
+
+    <!-- Navigation -->
+    <nav class="relative z-50 w-full px-6 py-6 md:px-12 flex justify-between items-center border-b border-white/10 bg-neutral-950/80 backdrop-blur-md">
+        <div class="flex items-center gap-3">
+            <a href="index.html" class="text-2xl md:text-3xl text-white tracking-tight font-bold">
+                <span class="text-primary">Eisenhuth</span> <span class="font-light">GmbH</span>
+            </a>
+        </div>
+
+        <div class="flex items-center gap-8">
+            <div class="hidden lg:flex gap-8 text-sm font-medium">
+                <a href="index.html" class="text-neutral-400 hover:text-white transition-colors">Home</a>
+                <a href="ueber-uns.html" class="text-neutral-400 hover:text-white transition-colors">Über Uns</a>
+                <a href="leistungen.html" class="text-neutral-400 hover:text-white transition-colors">Leistungen</a>
+                <a href="beratung.html" class="text-neutral-400 hover:text-white transition-colors">Beratung</a>
+                <a href="kontakt.html" class="text-neutral-400 hover:text-white transition-colors">Kontakt</a>
+            </div>
+
+            <a href="kontakt.html" class="hidden md:block bg-primary text-white px-6 py-2.5 rounded-full text-xs md:text-sm font-medium hover:bg-accent transition-colors tracking-wide">
+                Jetzt Termin vereinbaren
+            </a>
+
+            <button id="mobile-menu-btn" class="text-white hover:text-neutral-300 transition-colors lg:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-neutral-950/98 z-50 backdrop-blur-lg">
+        <div class="flex justify-between items-center px-6 py-6 border-b border-white/10">
+            <div class="text-2xl text-white font-bold">
+                <span class="text-primary">Eisenhuth</span> <span class="font-light">GmbH</span>
+            </div>
+            <button id="mobile-menu-close" class="text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+            </button>
+        </div>
+        <div class="flex flex-col gap-6 p-8 text-2xl">
+            <a href="index.html" class="text-neutral-300 hover:text-white transition-colors">Home</a>
+            <a href="ueber-uns.html" class="text-neutral-300 hover:text-white transition-colors">Über Uns</a>
+            <a href="leistungen.html" class="text-neutral-300 hover:text-white transition-colors">Leistungen</a>
+            <a href="beratung.html" class="text-neutral-300 hover:text-white transition-colors">Beratung</a>
+            <a href="kontakt.html" class="text-neutral-300 hover:text-white transition-colors">Kontakt</a>
+            <a href="kontakt.html" class="mt-6 bg-primary text-white px-6 py-3 rounded-full text-lg font-medium text-center">
+                Jetzt Termin vereinbaren
+            </a>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="relative py-20 md:py-28 px-6 md:px-12 text-center">
+        <div class="max-w-4xl mx-auto animate-on-scroll">
+            <span class="inline-block px-4 py-2 bg-primary/20 border border-primary/30 rounded-full text-primary text-sm font-medium tracking-wide mb-6">
+                Heizungstechnik
+            </span>
+            <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl leading-tight tracking-tight text-white mb-6">
+                Moderne <span class="text-primary italic">Wärme</span>
+            </h1>
+            <p class="text-xl md:text-2xl font-light text-neutral-300">
+                Von klassischen Zentralheizungen bis zu innovativen Flächenheizungssystemen
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="py-20 md:py-28 px-6 md:px-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+
+                <!-- Left Column -->
+                <div class="animate-on-scroll">
+                    <h2 class="font-serif text-3xl md:text-4xl text-white mb-6">Ihre Wärmeversorgung</h2>
+                    <p class="text-neutral-300 mb-8 leading-relaxed">
+                        Eine moderne Heizung ist das Herzstück jedes Hauses. Wir beraten Sie umfassend zu allen verfügbaren Systemen und finden die optimale Lösung für Ihre Anforderungen – effizient, zuverlässig und zukunftssicher.
+                    </p>
+
+                    <h3 class="font-semibold text-white text-xl mb-4">Unsere Heizlösungen:</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <span class="text-primary font-bold mt-1">•</span>
+                            <div>
+                                <div class="font-semibold text-white">Zentralheizung</div>
+                                <p class="text-neutral-400 text-sm">Klassische Öl- und Gasheizungen</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-primary font-bold mt-1">•</span>
+                            <div>
+                                <div class="font-semibold text-white">Fußbodenheizung</div>
+                                <p class="text-neutral-400 text-sm">Behagliche Wärme von unten</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-primary font-bold mt-1">•</span>
+                            <div>
+                                <div class="font-semibold text-white">Wandheizung</div>
+                                <p class="text-neutral-400 text-sm">Modernes Flächenheizsystem</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-primary font-bold mt-1">•</span>
+                            <div>
+                                <div class="font-semibold text-white">Wartung & Service</div>
+                                <p class="text-neutral-400 text-sm">Regelmäßige Überprüfung Ihrer Anlage</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right Column -->
+                <div class="bg-neutral-900/50 border border-neutral-800 rounded-lg p-8 animate-on-scroll delay-100">
+                    <h3 class="font-serif text-2xl text-white mb-6">Heizungswechsel?</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <div class="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                </div>
+                                <h4 class="font-semibold text-white">Energieeffizient</h4>
+                            </div>
+                            <p class="text-neutral-400 text-sm ml-10">Moderne Systeme senken Ihre Heizkosten</p>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <div class="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                </div>
+                                <h4 class="font-semibold text-white">Umweltfreundlich</h4>
+                            </div>
+                            <p class="text-neutral-400 text-sm ml-10">Weniger CO2-Emissionen durch neue Technologie</p>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <div class="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                </div>
+                                <h4 class="font-semibold text-white">Zuverlässig</h4>
+                            </div>
+                            <p class="text-neutral-400 text-sm ml-10">Langlebige Systeme mit Garantie</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Services -->
+    <section class="py-20 md:py-28 px-6 md:px-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="font-serif text-3xl md:text-4xl text-white mb-12 text-center animate-on-scroll">
+                Unsere Heizlösungen im Detail
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-8 rounded-lg bg-neutral-900/50 border border-neutral-800 hover:border-primary/50 transition-all duration-300 animate-on-scroll">
+                    <h3 class="text-2xl font-serif text-white mb-4">Zentralheizung</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Die klassische Zentralheizung ist nach wie vor eine zuverlässige Lösung. Ob Gas-, Öl- oder Pelletbefeuerung – wir installieren zukunftsweisende Systeme.
+                    </p>
+                    <ul class="space-y-2 text-neutral-300">
+                        <li>• Gasheizungen (Brennwert)</li>
+                        <li>• Ölheizungen (Brennwerttechnik)</li>
+                        <li>• Pelletkessel (Biomasse)</li>
+                        <li>• Hybridanlagen (kombiniert)</li>
+                    </ul>
+                </div>
+
+                <div class="p-8 rounded-lg bg-neutral-900/50 border border-neutral-800 hover:border-primary/50 transition-all duration-300 animate-on-scroll delay-100">
+                    <h3 class="text-2xl font-serif text-white mb-4">Fußbodenheizung</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Fußbodenheizungen bieten optimalen Komfort und sorgen für gleichmäßige Wärmeverbreitung. Ideal für Renovierung und Neubau.
+                    </p>
+                    <ul class="space-y-2 text-neutral-300">
+                        <li>• Nassysteme (in Beton)</li>
+                        <li>• Trockensysteme (unter Belag)</li>
+                        <li>• Individuelle Verlegung</li>
+                        <li>• Thermostat-Regelung</li>
+                    </ul>
+                </div>
+
+                <div class="p-8 rounded-lg bg-neutral-900/50 border border-neutral-800 hover:border-primary/50 transition-all duration-300 animate-on-scroll delay-200">
+                    <h3 class="text-2xl font-serif text-white mb-4">Wandheizung</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Wandheizungssysteme sind innovative Flächenheizsysteme, die hochwertige Wärmeverteilung mit platzsparendem Einbau kombinieren.
+                    </p>
+                    <ul class="space-y-2 text-neutral-300">
+                        <li>• Moderne Rohrsysteme</li>
+                        <li>• Schnelle Aufheizung</li>
+                        <li>• Energieeffizient</li>
+                        <li>• Ästhetisch unsichtbar</li>
+                    </ul>
+                </div>
+
+                <div class="p-8 rounded-lg bg-neutral-900/50 border border-neutral-800 hover:border-primary/50 transition-all duration-300 animate-on-scroll delay-300">
+                    <h3 class="text-2xl font-serif text-white mb-4">Wartung & Service</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Eine regelmäßige Wartung Ihrer Heizanlage ist entscheidend für Effizienz und Lebensdauer. Wir kümmern uns um alles.
+                    </p>
+                    <ul class="space-y-2 text-neutral-300">
+                        <li>• Jährliche Inspektionen</li>
+                        <li>• Wartungsverträge</li>
+                        <li>• Notfallservice</li>
+                        <li>• Reparaturen aller Art</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-primary text-white py-20 px-6 md:px-12 border-t border-primary/20 animate-on-scroll">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="font-serif text-3xl md:text-5xl tracking-tight mb-6">Die richtige Heizung für Sie</h2>
+            <p class="text-xl md:text-2xl font-light mb-8 text-white/90">
+                Nutzen Sie unsere langjährige Erfahrung und finden Sie mit uns die optimale Heizlösung für Ihr Zuhause.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="kontakt.html" class="inline-block bg-white text-primary px-8 py-4 rounded-full text-base font-semibold hover:bg-neutral-100 transition-all duration-300 shadow-xl">
+                    Beratung anfordern
+                </a>
+                <a href="tel:+495617013898" class="inline-block bg-white/20 text-white border border-white px-8 py-4 rounded-full text-base font-semibold hover:bg-white/30 transition-all duration-300">
+                    +49 561 7013898
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-neutral-400 pt-20 pb-12 px-6 md:px-12 border-t border-neutral-900">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-16">
+
+                <!-- Brand -->
+                <div class="md:col-span-1 animate-on-scroll">
+                    <div class="text-2xl text-white font-bold mb-6">
+                        <span class="text-primary">Eisenhuth</span> GmbH
+                    </div>
+                    <p class="text-sm leading-relaxed mb-6">
+                        Ihr zuverlässiger Partner für Sanitär, Heizung, Elektro und Klimatechnik in Kassel und Umgebung.
+                    </p>
+                    <div class="inline-block px-3 py-1 bg-primary/20 border border-primary/30 rounded text-primary text-xs font-medium">
+                        e-masters zertifiziert
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="animate-on-scroll delay-100">
+                    <h4 class="text-white text-sm font-semibold uppercase tracking-widest mb-6">Navigation</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="ueber-uns.html" class="hover:text-white transition-colors">Über Uns</a></li>
+                        <li><a href="leistungen.html" class="hover:text-white transition-colors">Leistungen</a></li>
+                        <li><a href="beratung.html" class="hover:text-white transition-colors">Beratung</a></li>
+                        <li><a href="jobs.html" class="hover:text-white transition-colors">Karriere</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="animate-on-scroll delay-200">
+                    <h4 class="text-white text-sm font-semibold uppercase tracking-widest mb-6">Leistungen</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="sanitaer.html" class="hover:text-white transition-colors">Sanitärtechnik</a></li>
+                        <li><a href="heizung.html" class="hover:text-white transition-colors">Heizungstechnik</a></li>
+                        <li><a href="klima.html" class="hover:text-white transition-colors">Klimatechnik</a></li>
+                        <li><a href="erneuerbare-energien.html" class="hover:text-white transition-colors">Erneuerbare Energien</a></li>
+                        <li><a href="notdienst.html" class="hover:text-white transition-colors">Notdienst</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="animate-on-scroll delay-300">
+                    <h4 class="text-white text-sm font-semibold uppercase tracking-widest mb-6">Kontakt</h4>
+                    <address class="not-italic text-sm space-y-3">
+                        <p>
+                            <strong class="text-white">Eisenhuth GmbH</strong><br>
+                            An der Schlade 5 b<br>
+                            34123 Kassel
+                        </p>
+                        <p>
+                            <a href="tel:+495617013898" class="hover:text-white transition-colors flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                +49 561 7013898
+                            </a>
+                        </p>
+                        <p>
+                            <a href="kontakt.html" class="text-primary hover:text-accent transition-colors font-medium">
+                                Kontaktformular →
+                            </a>
+                        </p>
+                    </address>
+                </div>
+
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-neutral-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-neutral-600 animate-on-scroll">
+                <p>&copy; 2024 Eisenhuth GmbH. Alle Rechte vorbehalten.</p>
+                <div class="flex gap-6">
+                    <a href="impressum.html" class="hover:text-neutral-400 transition-colors">Impressum</a>
+                    <a href="datenschutz.html" class="hover:text-neutral-400 transition-colors">Datenschutz</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/495617013898" target="_blank" class="whatsapp-float" aria-label="WhatsApp kontaktieren">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </a>
+
+    <script>
+        lucide.createIcons();
+
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.remove('hidden');
+        });
+
+        document.getElementById('mobile-menu-close').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        });
+    </script>
+</body>
+</html>

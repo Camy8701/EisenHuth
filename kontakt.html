@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Eisenhuth GmbH</title>
+    <meta name="description" content="Kontaktieren Sie Eisenhuth GmbH für Sanitär, Heizung und Elektro in Kassel. Telefon, E-Mail und Kontaktformular.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0066CC',
+                        secondary: '#003D7A',
+                        accent: '#00A3E0'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://www.aura.build/FxFilter.js"></script>
+
+    <script>
+    (function () {
+        const style = document.createElement("style");
+        style.textContent = `
+            @keyframes animationIn {
+                from { opacity: 0; transform: translateY(40px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .animate-on-scroll { opacity: 0; }
+            .animate-on-scroll.animate { animation: animationIn 1s ease-out forwards; }
+            ::-webkit-scrollbar { width: 6px; }
+            ::-webkit-scrollbar-track { background: #0a0a0a; }
+            ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+            ::-webkit-scrollbar-thumb:hover { background: #555; }
+        `;
+        document.head.appendChild(style);
+        const once = true;
+        if (!window.__inViewIO) {
+            window.__inViewIO = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("animate");
+                        if (once) window.__inViewIO.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: "0px 0px -5% 0px" });
+        }
+        window.initInViewAnimations = function (selector = ".animate-on-scroll") {
+            document.querySelectorAll(selector).forEach((el) => {
+                window.__inViewIO.observe(el);
+            });
+        };
+        document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
+    })();
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            background-color: #20BA5A;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-200 overflow-x-hidden selection:bg-primary/20">
+
+    <div class="fixed top-0 w-full h-screen bg-gradient-to-br from-neutral-900 via-neutral-950 to-black -z-10"></div>
+
+    <!-- Navigation -->
+    <nav class="relative z-50 w-full px-6 py-6 md:px-12 flex justify-between items-center border-b border-white/10 bg-neutral-950/80 backdrop-blur-md">
+        <div class="flex items-center gap-3">
+            <a href="index.html" class="text-2xl md:text-3xl text-white tracking-tight font-bold">
+                <span class="text-primary">Eisenhuth</span> <span class="font-light">GmbH</span>
+            </a>
+        </div>
+
+        <div class="flex items-center gap-8">
+            <div class="hidden lg:flex gap-8 text-sm font-medium">
+                <a href="index.html" class="text-neutral-400 hover:text-white transition-colors">Home</a>
+                <a href="ueber-uns.html" class="text-neutral-400 hover:text-white transition-colors">Über Uns</a>
+                <a href="leistungen.html" class="text-neutral-400 hover:text-white transition-colors">Leistungen</a>
+                <a href="beratung.html" class="text-neutral-400 hover:text-white transition-colors">Beratung</a>
+                <a href="kontakt.html" class="text-white border-b border-primary pb-1 transition-colors">Kontakt</a>
+            </div>
+
+            <a href="tel:+495617013898" class="hidden md:flex items-center gap-2 bg-primary text-white px-6 py-2.5 rounded-full text-xs md:text-sm font-medium hover:bg-accent transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                Anrufen
+            </a>
+
+            <button id="mobile-menu-btn" class="text-white hover:text-neutral-300 transition-colors lg:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-neutral-950/98 z-50 backdrop-blur-lg">
+        <div class="flex justify-between items-center px-6 py-6 border-b border-white/10">
+            <div class="text-2xl text-white font-bold">
+                <span class="text-primary">Eisenhuth</span> <span class="font-light">GmbH</span>
+            </div>
+            <button id="mobile-menu-close" class="text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+            </button>
+        </div>
+        <div class="flex flex-col gap-6 p-8 text-2xl">
+            <a href="index.html" class="text-neutral-300 hover:text-white transition-colors">Home</a>
+            <a href="ueber-uns.html" class="text-neutral-300 hover:text-white transition-colors">Über Uns</a>
+            <a href="leistungen.html" class="text-neutral-300 hover:text-white transition-colors">Leistungen</a>
+            <a href="beratung.html" class="text-neutral-300 hover:text-white transition-colors">Beratung</a>
+            <a href="kontakt.html" class="text-primary font-medium">Kontakt</a>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="relative py-20 md:py-28 px-6 md:px-12 text-center">
+        <div class="max-w-4xl mx-auto animate-on-scroll">
+            <span class="inline-block px-4 py-2 bg-primary/20 border border-primary/30 rounded-full text-primary text-sm font-medium tracking-wide mb-6">
+                Kontakt
+            </span>
+            <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl leading-tight tracking-tight text-white mb-6">
+                Wir sind <span class="text-primary italic">für Sie da</span>
+            </h1>
+            <p class="text-xl md:text-2xl font-light text-neutral-300">
+                Rufen Sie uns an oder senden Sie eine Nachricht
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 md:py-24 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+            <!-- Contact Form -->
+            <div class="animate-on-scroll">
+                <div class="bg-neutral-900/50 backdrop-blur-sm border border-neutral-800 rounded-lg p-8 md:p-10">
+                    <h2 class="font-serif text-3xl text-white mb-6">Kontaktformular</h2>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="vorname" class="block text-sm font-medium text-neutral-300 mb-2">Vorname *</label>
+                                <input type="text" id="vorname" name="vorname" required class="w-full bg-neutral-800 border border-neutral-700 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-primary transition-colors placeholder:text-neutral-600" placeholder="Ihr Vorname">
+                            </div>
+                            <div>
+                                <label for="nachname" class="block text-sm font-medium text-neutral-300 mb-2">Nachname *</label>
+                                <input type="text" id="nachname" name="nachname" required class="w-full bg-neutral-800 border border-neutral-700 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-primary transition-colors placeholder:text-neutral-600" placeholder="Ihr Nachname">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-neutral-300 mb-2">E-Mail *</label>
+                            <input type="email" id="email" name="email" required class="w-full bg-neutral-800 border border-neutral-700 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-primary transition-colors placeholder:text-neutral-600" placeholder="ihre@email.de">
+                        </div>
+
+                        <div>
+                            <label for="telefon" class="block text-sm font-medium text-neutral-300 mb-2">Telefon</label>
+                            <input type="tel" id="telefon" name="telefon" class="w-full bg-neutral-800 border border-neutral-700 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-primary transition-colors placeholder:text-neutral-600" placeholder="Ihre Telefonnummer">
+                        </div>
+
+                        <div>
+                            <label for="betreff" class="block text-sm font-medium text-neutral-300 mb-2">Betreff *</label>
+                            <select id="betreff" name="betreff" required class="w-full bg-neutral-800 border border-neutral-700 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-primary transition-colors">
+                                <option value="">Bitte wählen...</option>
+                                <option value="beratung">Beratung</option>
+                                <option value="angebot">Angebot anfordern</option>
+                                <option value="wartung">Wartung/Service</option>
+                                <option value="notdienst">Notdienst</option>
+                                <option value="sonstiges">Sonstiges</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="nachricht" class="block text-sm font-medium text-neutral-300 mb-2">Nachricht *</label>
+                            <textarea id="nachricht" name="nachricht" rows="5" required class="w-full bg-neutral-800 border border-neutral-700 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-primary transition-colors placeholder:text-neutral-600 resize-none" placeholder="Ihre Nachricht an uns..."></textarea>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="datenschutz" name="datenschutz" required class="mt-1 w-4 h-4 text-primary bg-neutral-800 border-neutral-700 rounded focus:ring-primary">
+                            <label for="datenschutz" class="text-sm text-neutral-400">
+                                Ich habe die <a href="datenschutz.html" class="text-primary hover:underline">Datenschutzerklärung</a> zur Kenntnis genommen. Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und für Rückfragen gespeichert werden. *
+                            </label>
+                        </div>
+
+                        <button type="submit" class="w-full bg-primary text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-accent transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
+                            Nachricht senden
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg>
+                        </button>
+
+                        <p class="text-xs text-neutral-500 text-center">* Pflichtfelder</p>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="space-y-8">
+                <!-- Direct Contact -->
+                <div class="animate-on-scroll delay-100">
+                    <div class="bg-neutral-900/50 backdrop-blur-sm border border-neutral-800 rounded-lg p-8">
+                        <h3 class="font-serif text-2xl text-white mb-6">Direkt kontaktieren</h3>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-neutral-400 mb-1">Telefon</div>
+                                    <a href="tel:+495617013898" class="text-lg text-white hover:text-primary transition-colors">+49 561 7013898</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M21.2 8.4c.5.38.8.97.8 1.6v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10a2 2 0 0 1 .8-1.6l8-6a2 2 0 0 1 2.4 0l8 6Z"></path><path d="m22 10-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 10"></path></svg>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-neutral-400 mb-1">E-Mail</div>
+                                    <a href="mailto:info@eisenhuth-haustechnik.de" class="text-lg text-white hover:text-primary transition-colors break-all">info@eisenhuth-haustechnik.de</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-neutral-400 mb-1">Adresse</div>
+                                    <div class="text-lg text-white">
+                                        An der Schlade 5 b<br>
+                                        34123 Kassel
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Opening Hours -->
+                <div class="animate-on-scroll delay-200">
+                    <div class="bg-neutral-900/50 backdrop-blur-sm border border-neutral-800 rounded-lg p-8">
+                        <h3 class="font-serif text-2xl text-white mb-6">Öffnungszeiten</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center py-3 border-b border-neutral-800">
+                                <span class="text-neutral-300">Montag - Donnerstag</span>
+                                <span class="text-white font-medium">07:00 - 16:00</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b border-neutral-800">
+                                <span class="text-neutral-300">Freitag</span>
+                                <span class="text-white font-medium">07:00 - 13:00</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3">
+                                <span class="text-neutral-300">Samstag & Sonntag</span>
+                                <span class="text-red-400 font-medium">Geschlossen</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 p-4 bg-primary/10 border border-primary/30 rounded-lg">
+                            <div class="flex items-center gap-2 text-primary mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                                <span class="font-semibold">Notdienst</span>
+                            </div>
+                            <p class="text-sm text-neutral-300">24/7 Notdienst verfügbar</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WhatsApp CTA -->
+                <div class="animate-on-scroll delay-300">
+                    <a href="https://wa.me/495617013898" target="_blank" class="block bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-lg p-8 transition-all duration-300 shadow-lg">
+                        <div class="flex items-center gap-4 mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                            <div>
+                                <div class="text-xl font-bold">WhatsApp</div>
+                                <div class="text-sm opacity-90">Schnell & unkompliziert</div>
+                            </div>
+                        </div>
+                        <p class="text-sm opacity-90">Senden Sie uns eine Nachricht über WhatsApp</p>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-16 px-6 md:px-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto animate-on-scroll">
+            <h3 class="font-serif text-3xl text-white mb-8 text-center">So finden Sie uns</h3>
+            <div class="w-full h-[500px] rounded-lg overflow-hidden border border-neutral-800">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2491.761939987814!2d9.519878776842164!3d51.31883632559943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bb3b5e6d5e7b7d%3A0x5e4e6d5e7b7d5e4e!2sAn%20der%20Schlade%205b%2C%2034123%20Kassel!5e0!3m2!1sde!2sde!4v1234567890123!5m2!1sde!2sde"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="grayscale contrast-125 invert opacity-80">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-neutral-400 pt-20 pb-12 px-6 md:px-12 border-t border-neutral-900 mt-20">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-16">
+                <div class="md:col-span-1">
+                    <div class="text-2xl text-white font-bold mb-6">
+                        <span class="text-primary">Eisenhuth</span> GmbH
+                    </div>
+                    <p class="text-sm leading-relaxed mb-6">
+                        Ihr zuverlässiger Partner für Sanitär, Heizung, Elektro und Klimatechnik in Kassel und Umgebung.
+                    </p>
+                    <div class="inline-block px-3 py-1 bg-primary/20 border border-primary/30 rounded text-primary text-xs font-medium">
+                        e-masters zertifiziert
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white text-sm font-semibold uppercase tracking-widest mb-6">Navigation</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="ueber-uns.html" class="hover:text-white transition-colors">Über Uns</a></li>
+                        <li><a href="leistungen.html" class="hover:text-white transition-colors">Leistungen</a></li>
+                        <li><a href="beratung.html" class="hover:text-white transition-colors">Beratung</a></li>
+                        <li><a href="jobs.html" class="hover:text-white transition-colors">Karriere</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white text-sm font-semibold uppercase tracking-widest mb-6">Leistungen</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="sanitaer.html" class="hover:text-white transition-colors">Sanitärtechnik</a></li>
+                        <li><a href="heizung.html" class="hover:text-white transition-colors">Heizungstechnik</a></li>
+                        <li><a href="klima.html" class="hover:text-white transition-colors">Klimatechnik</a></li>
+                        <li><a href="erneuerbare-energien.html" class="hover:text-white transition-colors">Erneuerbare Energien</a></li>
+                        <li><a href="notdienst.html" class="hover:text-white transition-colors">Notdienst</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white text-sm font-semibold uppercase tracking-widest mb-6">Kontakt</h4>
+                    <address class="not-italic text-sm space-y-3">
+                        <p>
+                            <strong class="text-white">Eisenhuth GmbH</strong><br>
+                            An der Schlade 5 b<br>
+                            34123 Kassel
+                        </p>
+                        <p>
+                            <a href="tel:+495617013898" class="hover:text-white transition-colors flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                +49 561 7013898
+                            </a>
+                        </p>
+                        <p>
+                            <a href="kontakt.html" class="text-primary hover:text-accent transition-colors font-medium">
+                                Kontaktformular →
+                            </a>
+                        </p>
+                    </address>
+                </div>
+            </div>
+
+            <div class="border-t border-neutral-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-neutral-600">
+                <p>&copy; 2024 Eisenhuth GmbH. Alle Rechte vorbehalten.</p>
+                <div class="flex gap-6">
+                    <a href="impressum.html" class="hover:text-neutral-400 transition-colors">Impressum</a>
+                    <a href="datenschutz.html" class="hover:text-neutral-400 transition-colors">Datenschutz</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/495617013898" target="_blank" class="whatsapp-float" aria-label="WhatsApp kontaktieren">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </a>
+
+    <script>
+        lucide.createIcons();
+
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.remove('hidden');
+        });
+
+        document.getElementById('mobile-menu-close').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        });
+    </script>
+</body>
+</html>

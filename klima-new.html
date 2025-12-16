@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klimatechnik - Eisenhuth GmbH</title>
+
+    <!-- Fonts: Playfair Display (Serif) for titles, Inter (Sans) for UI -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Liquid Glass Script -->
+    <script src="https://www.aura.build/FxFilter.js"></script>
+
+    <!-- Animation on Scroll -->
+    <script>
+    (function () {
+        const style = document.createElement("style");
+        style.textContent = `
+            @keyframes animationIn {
+                from { opacity: 0; transform: translateY(40px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .animate-on-scroll { opacity: 0; }
+            .animate-on-scroll.animate { animation: animationIn 1s ease-out forwards; }
+            ::-webkit-scrollbar { width: 6px; }
+            ::-webkit-scrollbar-track { background: #0a0a0a; }
+            ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+            ::-webkit-scrollbar-thumb:hover { background: #555; }
+        `;
+        document.head.appendChild(style);
+        const once = true;
+        if (!window.__inViewIO) {
+            window.__inViewIO = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("animate");
+                        if (once) window.__inViewIO.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: "0px 0px -5% 0px" });
+        }
+        window.initInViewAnimations = function (selector = ".animate-on-scroll") {
+            document.querySelectorAll(selector).forEach((el) => {
+                window.__inViewIO.observe(el);
+            });
+        };
+        document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
+    })();
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .font-serif {
+            family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-200 overflow-x-hidden selection:bg-white/20">
+
+    <!-- Background (image) - Modern air conditioning unit with no people -->
+    <div class="fixed top-0 w-full h-screen bg-cover bg-center -z-10" style="background-image: url('https://images.unsplash.com/photo-1635274943777-408d96d643e3?w=1600&q=80'); mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent)"></div>
+
+    <!-- Hero Section -->
+    <section class="relative w-full h-screen overflow-hidden flex flex-col justify-between">
+
+        <!-- Background Overlay -->
+        <div class="absolute inset-0 z-0 bg-black/40 pointer-events-none"></div>
+
+        <!-- Navigation -->
+        <nav class="relative z-50 w-full px-6 py-6 md:px-12 flex justify-between items-center border-b border-white/10 animate-on-scroll">
+            <a href="index-new.html" class="text-2xl md:text-3xl text-white tracking-tight font-serif italic">Eisenhuth GmbH</a>
+
+            <div class="flex items-center gap-8">
+                <div class="hidden md:flex gap-6 text-sm font-medium tracking-wide">
+                    <a href="index-new.html" class="opacity-50 hover:opacity-100 cursor-pointer transition-opacity text-white">Home</a>
+                    <a href="leistungen-new.html" class="opacity-100 cursor-pointer border-b border-white pb-0.5 text-white">Leistungen</a>
+                    <a href="beratung-new.html" class="opacity-50 hover:opacity-100 cursor-pointer transition-opacity text-white">Beratung</a>
+                    <a href="kontakt-new.html" class="opacity-50 hover:opacity-100 cursor-pointer transition-opacity text-white">Kontakt</a>
+                </div>
+
+                <a href="kontakt-new.html" class="hidden md:block bg-white text-black px-6 py-2.5 rounded-full text-xs md:text-sm font-medium hover:bg-neutral-200 transition-colors tracking-wide">
+                    TERMIN VEREINBAREN
+                </a>
+
+                <button id="mobile-menu-button" class="text-white hover:text-neutral-300 transition-colors md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden fixed inset-0 bg-black/95 z-50 backdrop-blur-lg">
+            <div class="flex justify-between items-center px-6 py-6 border-b border-white/10">
+                <div class="text-2xl text-white font-serif italic">Eisenhuth GmbH</div>
+                <button id="mobile-menu-close" class="text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+                </button>
+            </div>
+            <div class="flex flex-col gap-8 p-8 text-2xl">
+                <a href="index-new.html" class="text-neutral-300 hover:text-white transition-colors">Home</a>
+                <a href="leistungen-new.html" class="text-white font-medium">Leistungen</a>
+                <a href="beratung-new.html" class="text-neutral-300 hover:text-white transition-colors">Beratung</a>
+                <a href="kontakt-new.html" class="text-neutral-300 hover:text-white transition-colors">Kontakt</a>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="flex-grow flex flex-col md:pb-0 z-10 pb-12 relative justify-end">
+
+            <!-- Description Card with Liquid Glass Effect -->
+            <div class="absolute top-[20%] md:top-auto md:bottom-[20%] right-6 md:right-12 w-[90%] md:w-[32rem] p-8 md:p-10 rounded-sm animate-on-scroll" style="--fx-filter: blur(12px) liquid-glass(2, 5) saturate(1.1); background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.05);">
+                <h2 class="font-serif italic text-3xl md:text-4xl leading-tight mb-6 tracking-tight text-white">
+                    Optimales Raumklima
+                    für maximale Behaglichkeit
+                </h2>
+                <p class="text-base md:text-lg font-light leading-relaxed opacity-90 text-neutral-200">
+                    Lüftung, Klimaanlage und professionelle Luftreinigung auf höchstem Niveau. Wir schaffen das perfekte Raumklima für Ihr Wohlbefinden.
+                </p>
+            </div>
+
+            <!-- Massive Title -->
+            <div class="relative w-full px-4 md:px-8 mt-auto z-0 pointer-events-none select-none">
+                <h1 class="font-serif text-[18vw] md:text-[22vw] leading-[0.75] tracking-tight text-white mix-blend-overlay opacity-90 animate-on-scroll">
+                    KLIMA
+                </h1>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 right-8 md:right-12 z-20 flex items-center gap-2 text-white animate-on-scroll">
+                <span class="text-xs md:text-sm uppercase tracking-widest font-serif">Mehr erfahren</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 animate-bounce"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview Section -->
+    <section class="bg-neutral-900 text-neutral-200 py-24 md:py-32 px-6 md:px-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
+
+            <div class="animate-on-scroll">
+                <span class="block text-xs font-medium tracking-[0.2em] text-neutral-500 mb-4 uppercase">Unser Angebot</span>
+                <h3 class="font-serif text-4xl md:text-6xl tracking-tight mb-8 text-white">Klima-<br>technik</h3>
+                <div class="h-[50vh] md:h-[60vh] w-full bg-neutral-800 rounded-sm overflow-hidden relative group cursor-none">
+                    <img src="https://images.unsplash.com/photo-1631545806609-e5a51d8f7dce?w=1600&q=80" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-80 group-hover:opacity-100" alt="Moderne Klimaanlage">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="w-24 h-24 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20">
+                            <span class="text-xs uppercase tracking-widest text-white">Details</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col justify-center animate-on-scroll delay-100">
+                <p class="text-lg md:text-2xl font-light leading-relaxed mb-12 text-neutral-400">
+                    Optimales Raumklima ist entscheidend für Gesundheit und Wohlbefinden. Von der Planung über die Installation bis zur Wartung – wir sind Ihr Partner für professionelle Klimatechnik.
+                </p>
+                <ul class="space-y-0">
+                    <li class="flex items-center justify-between group cursor-pointer border-t border-neutral-800 py-8 hover:bg-white/5 transition-colors px-4 -mx-4 rounded-sm">
+                        <div class="flex items-center gap-4">
+                            <span class="text-neutral-600 font-serif italic text-xl">01</span>
+                            <span class="text-lg font-normal text-neutral-300 group-hover:text-white transition-colors">Lüftungsanlagen</span>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-neutral-500 opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0 duration-300"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                    </li>
+                    <li class="flex items-center justify-between group cursor-pointer border-t border-neutral-800 py-8 hover:bg-white/5 transition-colors px-4 -mx-4 rounded-sm">
+                        <div class="flex items-center gap-4">
+                            <span class="text-neutral-600 font-serif italic text-xl">02</span>
+                            <span class="text-lg font-normal text-neutral-300 group-hover:text-white transition-colors">Klimaanlagen</span>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-neutral-500 opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0 duration-300"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                    </li>
+                    <li class="flex items-center justify-between group cursor-pointer border-t border-neutral-800 py-8 hover:bg-white/5 transition-colors px-4 -mx-4 rounded-sm">
+                        <div class="flex items-center gap-4">
+                            <span class="text-neutral-600 font-serif italic text-xl">03</span>
+                            <span class="text-lg font-normal text-neutral-300 group-hover:text-white transition-colors">Luftreinigung</span>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-neutral-500 opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0 duration-300"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                    </li>
+                    <li class="flex items-center justify-between group cursor-pointer border-t border-b border-neutral-800 py-8 hover:bg-white/5 transition-colors px-4 -mx-4 rounded-sm">
+                        <div class="flex items-center gap-4">
+                            <span class="text-neutral-600 font-serif italic text-xl">04</span>
+                            <span class="text-lg font-normal text-neutral-300 group-hover:text-white transition-colors">Raumklimaoptimierung</span>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-neutral-500 opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0 duration-300"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Details Section -->
+    <section class="bg-black text-neutral-200 py-24 md:py-32 px-6 md:px-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16 animate-on-scroll">
+                <span class="block text-xs font-medium tracking-[0.2em] text-neutral-500 mb-4 uppercase">Details</span>
+                <h3 class="font-serif text-4xl md:text-5xl tracking-tight text-white max-w-3xl">
+                    Frische Luft und <span class="italic">perfekte Temperatur</span> das ganze Jahr
+                </h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="animate-on-scroll">
+                    <div class="mb-6 text-neutral-600 font-serif italic text-2xl">01</div>
+                    <h4 class="font-serif text-2xl mb-4 text-white">Lüftungsanlagen</h4>
+                    <p class="text-neutral-400 leading-relaxed">
+                        Kontrollierte Wohnraumlüftung mit Wärmerückgewinnung. Zentrale und dezentrale Systeme für kontinuierlich frische Luft und optimale Luftqualität.
+                    </p>
+                </div>
+
+                <div class="animate-on-scroll delay-100">
+                    <div class="mb-6 text-neutral-600 font-serif italic text-2xl">02</div>
+                    <h4 class="font-serif text-2xl mb-4 text-white">Klimaanlagen</h4>
+                    <p class="text-neutral-400 leading-relaxed">
+                        Split-Klimageräte, Multi-Split-Systeme und VRF-Anlagen für Wohn- und Gewerberäume. Energieeffiziente Kühlung und Heizung in einem System.
+                    </p>
+                </div>
+
+                <div class="animate-on-scroll delay-200">
+                    <div class="mb-6 text-neutral-600 font-serif italic text-2xl">03</div>
+                    <h4 class="font-serif text-2xl mb-4 text-white">Luftreinigung</h4>
+                    <p class="text-neutral-400 leading-relaxed">
+                        Professionelle Luftreinigungssysteme mit HEPA-Filtern und UV-C-Technologie. Entfernung von Pollen, Staub, Viren und Allergenen.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-neutral-950 text-neutral-200 py-32 md:py-40 px-6 md:px-12 border-t border-white/5">
+        <div class="max-w-4xl mx-auto text-center animate-on-scroll">
+            <h3 class="font-serif text-5xl md:text-7xl tracking-tight mb-8 text-white">
+                Perfektes<br><span class="italic">Raumklima</span>
+            </h3>
+            <p class="text-lg md:text-xl font-light mb-12 text-neutral-400 max-w-2xl mx-auto">
+                Lassen Sie sich von unseren Klimaexperten beraten und schaffen Sie optimale Luftqualität in Ihren Räumen.
+            </p>
+            <a href="kontakt-new.html" class="inline-block bg-white text-black px-10 py-4 rounded-full text-sm font-medium hover:bg-neutral-200 transition-colors tracking-wide">
+                JETZT BERATUNG VEREINBAREN
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-neutral-400 py-16 px-6 md:px-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="md:col-span-2">
+                    <div class="text-2xl md:text-3xl text-white font-serif italic mb-6">Eisenhuth GmbH</div>
+                    <p class="text-sm leading-relaxed max-w-md opacity-70">
+                        Ihr zuverlässiger Partner für Sanitär, Heizung, Elektro und Klimatechnik in Kassel und Umgebung seit vielen Jahren.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white text-sm font-medium uppercase tracking-widest mb-6">Navigation</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index-new.html" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="leistungen-new.html" class="hover:text-white transition-colors">Leistungen</a></li>
+                        <li><a href="beratung-new.html" class="hover:text-white transition-colors">Beratung</a></li>
+                        <li><a href="kontakt-new.html" class="hover:text-white transition-colors">Kontakt</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white text-sm font-medium uppercase tracking-widest mb-6">Kontakt</h4>
+                    <address class="not-italic text-sm space-y-2 opacity-70">
+                        <p>An der Schlade 5 b<br>34123 Kassel</p>
+                        <p><a href="tel:+495617013898" class="hover:text-white transition-colors">+49 561 7013898</a></p>
+                        <p><a href="mailto:info@eisenhuth-haustechnik.de" class="hover:text-white transition-colors">info@eisenhuth-haustechnik.de</a></p>
+                    </address>
+                </div>
+            </div>
+
+            <div class="border-t border-neutral-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs opacity-50">
+                <p>&copy; 2024 Eisenhuth GmbH. Alle Rechte vorbehalten.</p>
+                <div class="flex gap-6">
+                    <a href="impressum.html" class="hover:text-white transition-colors">Impressum</a>
+                    <a href="datenschutz.html" class="hover:text-white transition-colors">Datenschutz</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.remove('hidden');
+        });
+
+        document.getElementById('mobile-menu-close').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        });
+    </script>
+</body>
+</html>

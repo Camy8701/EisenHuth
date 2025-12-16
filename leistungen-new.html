@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leistungen - Eisenhuth GmbH</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://www.aura.build/FxFilter.js"></script>
+
+    <script>
+    (function () {
+        const style = document.createElement("style");
+        style.textContent = `
+            @keyframes animationIn {
+                from { opacity: 0; transform: translateY(40px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .animate-on-scroll { opacity: 0; }
+            .animate-on-scroll.animate { animation: animationIn 1s ease-out forwards; }
+            ::-webkit-scrollbar { width: 6px; }
+            ::-webkit-scrollbar-track { background: #0a0a0a; }
+            ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+            ::-webkit-scrollbar-thumb:hover { background: #555; }
+        `;
+        document.head.appendChild(style);
+        const once = true;
+        if (!window.__inViewIO) {
+            window.__inViewIO = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("animate");
+                        if (once) window.__inViewIO.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: "0px 0px -5% 0px" });
+        }
+        window.initInViewAnimations = function (selector = ".animate-on-scroll") {
+            document.querySelectorAll(selector).forEach((el) => {
+                window.__inViewIO.observe(el);
+            });
+        };
+        document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
+    })();
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-200 overflow-x-hidden selection:bg-white/20">
+
+    <div class="fixed top-0 w-full h-screen bg-cover bg-center -z-10" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80'); mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent)"></div>
+
+    <section class="relative w-full min-h-screen overflow-hidden flex flex-col justify-between pb-24">
+        <div class="absolute inset-0 z-0 bg-black/30 pointer-events-none"></div>
+
+        <nav class="relative z-50 w-full px-6 py-6 md:px-12 flex justify-between items-center border-b border-white/10 animate-on-scroll">
+            <a href="index-new.html" class="text-2xl md:text-3xl text-white tracking-tight font-serif italic">Eisenhuth GmbH</a>
+            <div class="flex items-center gap-8">
+                <div class="hidden md:flex gap-6 text-sm font-medium tracking-wide">
+                    <a href="index-new.html" class="opacity-50 hover:opacity-100 cursor-pointer transition-opacity text-white">Home</a>
+                    <a href="leistungen-new.html" class="opacity-100 cursor-pointer border-b border-white pb-0.5 text-white">Leistungen</a>
+                    <a href="beratung-new.html" class="opacity-50 hover:opacity-100 cursor-pointer transition-opacity text-white">Beratung</a>
+                    <a href="kontakt-new.html" class="opacity-50 hover:opacity-100 cursor-pointer transition-opacity text-white">Kontakt</a>
+                </div>
+                <a href="kontakt-new.html" class="hidden md:block bg-white text-black px-6 py-2.5 rounded-full text-xs md:text-sm font-medium hover:bg-neutral-200 transition-colors tracking-wide">
+                    TERMIN VEREINBAREN
+                </a>
+                <button id="mobile-menu-button" class="text-white hover:text-neutral-300 transition-colors md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
+                </button>
+            </div>
+        </nav>
+
+        <div id="mobile-menu" class="hidden fixed inset-0 bg-black/95 z-50 backdrop-blur-lg">
+            <div class="flex justify-between items-center px-6 py-6 border-b border-white/10">
+                <div class="text-2xl text-white font-serif italic">Eisenhuth GmbH</div>
+                <button id="mobile-menu-close" class="text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+                </button>
+            </div>
+            <div class="flex flex-col gap-8 p-8 text-2xl">
+                <a href="index-new.html" class="text-neutral-300 hover:text-white transition-colors">Home</a>
+                <a href="leistungen-new.html" class="text-white font-medium">Leistungen</a>
+                <a href="beratung-new.html" class="text-neutral-300 hover:text-white transition-colors">Beratung</a>
+                <a href="kontakt-new.html" class="text-neutral-300 hover:text-white transition-colors">Kontakt</a>
+            </div>
+        </div>
+
+        <div class="flex-grow flex flex-col justify-center z-10 px-6 md:px-12 pt-20 md:pt-32">
+            <div class="max-w-7xl mx-auto w-full animate-on-scroll">
+                <span class="block text-xs font-medium tracking-[0.2em] text-neutral-400 mb-4 uppercase">Portfolio</span>
+                <h1 class="font-serif text-6xl md:text-8xl lg:text-9xl tracking-tight text-white mb-8">
+                    Unsere<br><span class="italic text-neutral-600">Leistungen</span>
+                </h1>
+                <p class="text-lg md:text-xl font-light text-neutral-300 max-w-2xl">
+                    Professionelle SHK-Lösungen in Sanitär, Heizung und Klimatechnik – für Wohn- und Gewerberäume in höchster Qualität.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-neutral-900 py-24 md:py-32 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
+
+                <!-- Sanitär (Large) -->
+                <div class="md:col-span-8 group relative animate-on-scroll">
+                    <a href="sanitaer-new.html" class="block">
+                        <div class="relative w-full aspect-[4/3] md:aspect-[16/9] overflow-hidden rounded-sm bg-neutral-800">
+                            <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=1600&q=80" alt="Sanitärtechnik" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                            <div class="absolute bottom-0 left-0 p-6 md:p-10 w-full">
+                                <div class="flex justify-between items-end transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                                    <div>
+                                        <div class="flex items-center gap-3 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                            <span class="px-2 py-1 bg-white/20 backdrop-blur-md text-[10px] uppercase tracking-widest rounded-full">Sanitär</span>
+                                        </div>
+                                        <h3 class="text-2xl md:text-4xl font-serif text-white mb-1">Sanitärtechnik</h3>
+                                        <p class="text-neutral-400 text-sm md:text-base font-light">Badezimmer, Wellness, Rohrleitungen</p>
+                                    </div>
+                                    <div class="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center bg-white/0 group-hover:bg-white text-white group-hover:text-black transition-all duration-300">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform duration-300"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Heizung (Vertical) -->
+                <div class="md:col-span-4 group relative animate-on-scroll delay-100">
+                    <a href="heizung-new.html" class="block">
+                        <div class="relative w-full aspect-[3/4] overflow-hidden rounded-sm bg-neutral-800">
+                            <img src="https://images.unsplash.com/photo-1516733968668-dbdce39c4651?w=1000&q=80" alt="Heizungstechnik" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full">
+                                <div class="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                                    <div class="flex items-center gap-3 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                        <span class="px-2 py-1 bg-white/20 backdrop-blur-md text-[10px] uppercase tracking-widest rounded-full">Heizung</span>
+                                    </div>
+                                    <h3 class="text-xl md:text-2xl font-serif text-white mb-1">Heizungstechnik</h3>
+                                    <p class="text-neutral-400 text-sm font-light">Moderne Wärme</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Klima (Vertical) -->
+                <div class="md:col-span-4 group relative animate-on-scroll delay-200">
+                    <a href="klima-new.html" class="block">
+                        <div class="relative w-full aspect-[3/4] overflow-hidden rounded-sm bg-neutral-800">
+                            <img src="https://images.unsplash.com/photo-1635274943777-408d96d643e3?w=1000&q=80" alt="Klimatechnik" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full">
+                                <div class="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                                    <div class="flex items-center gap-3 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                        <span class="px-2 py-1 bg-white/20 backdrop-blur-md text-[10px] uppercase tracking-widest rounded-full">Klima</span>
+                                    </div>
+                                    <h3 class="text-xl md:text-2xl font-serif text-white mb-1">Klimatechnik</h3>
+                                    <p class="text-neutral-400 text-sm font-light">Perfekte Luft</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Erneuerbare Energien (Large) -->
+                <div class="md:col-span-8 group relative animate-on-scroll delay-300">
+                    <a href="beratung-new.html" class="block">
+                        <div class="relative w-full aspect-[4/3] md:aspect-[16/9] overflow-hidden rounded-sm bg-neutral-800">
+                            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1600&q=80" alt="Erneuerbare Energien" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                            <div class="absolute bottom-0 left-0 p-6 md:p-10 w-full">
+                                <div class="flex justify-between items-end transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                                    <div>
+                                        <div class="flex items-center gap-3 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                            <span class="px-2 py-1 bg-white/20 backdrop-blur-md text-[10px] uppercase tracking-widest rounded-full">Energie</span>
+                                        </div>
+                                        <h3 class="text-2xl md:text-4xl font-serif text-white mb-1">Erneuerbare Energien</h3>
+                                        <p class="text-neutral-400 text-sm md:text-base font-light">Wärmepumpen, Solar, Photovoltaik</p>
+                                    </div>
+                                    <div class="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center bg-white/0 group-hover:bg-white text-white group-hover:text-black transition-all duration-300">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform duration-300"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-neutral-950 text-neutral-200 py-32 md:py-40 px-6 md:px-12 border-t border-white/5">
+        <div class="max-w-4xl mx-auto text-center animate-on-scroll">
+            <h3 class="font-serif text-5xl md:text-7xl tracking-tight mb-8 text-white">
+                Bereit für Ihr<br><span class="italic">Projekt?</span>
+            </h3>
+            <p class="text-lg md:text-xl font-light mb-12 text-neutral-400 max-w-2xl mx-auto">
+                Kontaktieren Sie uns für eine individuelle Beratung und ein unverbindliches Angebot.
+            </p>
+            <a href="kontakt-new.html" class="inline-block bg-white text-black px-10 py-4 rounded-full text-sm font-medium hover:bg-neutral-200 transition-colors tracking-wide">
+                JETZT BERATUNG VEREINBAREN
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-black text-neutral-400 py-16 px-6 md:px-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="md:col-span-2">
+                    <div class="text-2xl md:text-3xl text-white font-serif italic mb-6">Eisenhuth GmbH</div>
+                    <p class="text-sm leading-relaxed max-w-md opacity-70">
+                        Ihr zuverlässiger Partner für Sanitär, Heizung, Elektro und Klimatechnik in Kassel und Umgebung seit vielen Jahren.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white text-sm font-medium uppercase tracking-widest mb-6">Navigation</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index-new.html" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="leistungen-new.html" class="hover:text-white transition-colors">Leistungen</a></li>
+                        <li><a href="beratung-new.html" class="hover:text-white transition-colors">Beratung</a></li>
+                        <li><a href="kontakt-new.html" class="hover:text-white transition-colors">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-sm font-medium uppercase tracking-widest mb-6">Kontakt</h4>
+                    <address class="not-italic text-sm space-y-2 opacity-70">
+                        <p>An der Schlade 5 b<br>34123 Kassel</p>
+                        <p><a href="tel:+495617013898" class="hover:text-white transition-colors">+49 561 7013898</a></p>
+                        <p><a href="mailto:info@eisenhuth-haustechnik.de" class="hover:text-white transition-colors">info@eisenhuth-haustechnik.de</a></p>
+                    </address>
+                </div>
+            </div>
+            <div class="border-t border-neutral-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs opacity-50">
+                <p>&copy; 2024 Eisenhuth GmbH. Alle Rechte vorbehalten.</p>
+                <div class="flex gap-6">
+                    <a href="impressum.html" class="hover:text-white transition-colors">Impressum</a>
+                    <a href="datenschutz.html" class="hover:text-white transition-colors">Datenschutz</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.remove('hidden');
+        });
+        document.getElementById('mobile-menu-close').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        });
+    </script>
+</body>
+</html>

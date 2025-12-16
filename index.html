@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eisenhuth GmbH - Sanitär, Heizung & Elektro in Kassel</title>
+    <meta name="description" content="Ihr SHK-Profi in Kassel für Sanitär, Heizung, Elektro und Klimatechnik. Fachkompetente Beratung und zuverlässige Ausführung.">
+
+    <!-- Fonts: Playfair Display (Serif) for titles, Inter (Sans) for UI -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0066CC',
+                        secondary: '#003D7A',
+                        accent: '#00A3E0'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Liquid Glass Script -->
+    <script src="https://www.aura.build/FxFilter.js"></script>
+
+    <!-- Animation on Scroll -->
+    <script>
+    (function () {
+        const style = document.createElement("style");
+        style.textContent = `
+            @keyframes animationIn {
+                from { opacity: 0; transform: translateY(40px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .animate-on-scroll { opacity: 0; }
+            .animate-on-scroll.animate { animation: animationIn 1s ease-out forwards; }
+            ::-webkit-scrollbar { width: 6px; }
+            ::-webkit-scrollbar-track { background: #0a0a0a; }
+            ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+            ::-webkit-scrollbar-thumb:hover { background: #555; }
+        `;
+        document.head.appendChild(style);
+        const once = true;
+        if (!window.__inViewIO) {
+            window.__inViewIO = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("animate");
+                        if (once) window.__inViewIO.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: "0px 0px -5% 0px" });
+        }
+        window.initInViewAnimations = function (selector = ".animate-on-scroll") {
+            document.querySelectorAll(selector).forEach((el) => {
+                window.__inViewIO.observe(el);
+            });
+        };
+        document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
+    })();
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            background-color: #20BA5A;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-200 overflow-x-hidden selection:bg-primary/20">
+
+    <!-- Background (gradient) -->
+    <div class="fixed top-0 w-full h-screen bg-gradient-to-br from-neutral-900 via-neutral-950 to-black -z-10"></div>
+
+    <!-- Hero Section -->
+    <section class="relative w-full min-h-screen overflow-hidden flex flex-col justify-between">
+
+        <!-- Background Overlay with subtle pattern -->
+        <div class="absolute inset-0 z-0 opacity-10 pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%230066CC\' fill-opacity=\'0.4\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+
+        <!-- Navigation -->
+        <nav class="relative z-50 w-full px-6 py-6 md:px-12 flex justify-between items-center border-b border-white/10 bg-neutral-950/80 backdrop-blur-md animate-on-scroll">
+            <div class="flex items-center gap-3">
+                <div class="text-2xl md:text-3xl text-white tracking-tight font-bold">
+                    <span class="text-primary">Eisenhuth</span> <span class="font-light">GmbH</span>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-8">
+                <div class="hidden lg:flex gap-8 text-sm font-medium">
+                    <a href="index.html" class="text-white border-b border-primary pb-1 transition-colors">Home</a>
+                    <a href="ueber-uns.html" class="text-neutral-400 hover:text-white transition-colors">Über Uns</a>
+                    <a href="leistungen.html" class="text-neutral-400 hover:text-white transition-colors">Leistungen</a>
+                    <a href="beratung.html" class="text-neutral-400 hover:text-white transition-colors">Beratung</a>
+                    <a href="kontakt.html" class="text-neutral-400 hover:text-white transition-colors">Kontakt</a>
+                </div>
+
+                <a href="kontakt.html" class="hidden md:block bg-primary text-white px-6 py-2.5 rounded-full text-xs md:text-sm font-medium hover:bg-accent transition-colors tracking-wide">
+                    Jetzt Termin vereinbaren
+                </a>
+
+                <button id="mobile-menu-btn" class="text-white hover:text-neutral-300 transition-colors lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-neutral-950/98 z-50 backdrop-blur-lg">
+            <div class="flex justify-between items-center px-6 py-6 border-b border-white/10">
+                <div class="text-2xl text-white font-bold">
+                    <span class="text-primary">Eisenhuth</span> <span class="font-light">GmbH</span>
+                </div>
+                <button id="mobile-menu-close" class="text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+                </button>
+            </div>
+            <div class="flex flex-col gap-6 p-8 text-2xl">
+                <a href="index.html" class="text-primary font-medium">Home</a>
+                <a href="ueber-uns.html" class="text-neutral-300 hover:text-white transition-colors">Über Uns</a>
+                <a href="leistungen.html" class="text-neutral-300 hover:text-white transition-colors">Leistungen</a>
+                <a href="beratung.html" class="text-neutral-300 hover:text-white transition-colors">Beratung</a>
+                <a href="kontakt.html" class="text-neutral-300 hover:text-white transition-colors">Kontakt</a>
+                <a href="kontakt.html" class="mt-6 bg-primary text-white px-6 py-3 rounded-full text-lg font-medium text-center">
+                    Jetzt Termin vereinbaren
+                </a>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="flex-grow flex flex-col md:pb-0 z-10 pb-12 relative justify-center items-center px-6 md:px-12 py-20">
+
+            <!-- Hero Content -->
+            <div class="max-w-5xl mx-auto text-center animate-on-scroll">
+                <div class="mb-6">
+                    <span class="inline-block px-4 py-2 bg-primary/20 border border-primary/30 rounded-full text-primary text-sm font-medium tracking-wide">
+                        Ihr SHK-Profi in Kassel
+                    </span>
+                </div>
+
+                <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl leading-tight tracking-tight text-white mb-8">
+                    Herzlich <span class="text-primary italic">willkommen</span>
+                </h1>
+
+                <p class="text-xl md:text-2xl font-light leading-relaxed text-neutral-300 mb-12 max-w-3xl mx-auto">
+                    Als SHK-Betrieb sind wir Ihr Partner in Kassel für Sanitär, Heizung, Elektro und Klimatechnik.
+                    <span class="text-white font-medium">Wir garantieren Ihnen die beste Qualität.</span>
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="kontakt.html" class="group bg-primary text-white px-8 py-4 rounded-full text-base font-medium hover:bg-accent transition-all duration-300 flex items-center gap-2 shadow-lg shadow-primary/20">
+                        Jetzt beraten lassen
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                    </a>
+                    <a href="tel:+4956170138 98" class="bg-white/10 text-white border border-white/20 px-8 py-4 rounded-full text-base font-medium hover:bg-white/20 transition-colors backdrop-blur-sm flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        +49 561 7013898
+                    </a>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-white animate-on-scroll">
+                <span class="text-xs uppercase tracking-widest">Mehr erfahren</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 animate-bounce"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality Promise Section -->
+    <section class="bg-neutral-900 text-neutral-200 py-16 md:py-24 px-6 md:px-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="font-serif text-3xl md:text-4xl tracking-tight text-white mb-4">
+                    Wir als SHK-Profi garantieren Ihnen die beste Qualität
+                </h2>
+                <p class="text-lg text-neutral-400">Fachkompetente individuelle Beratung und Durchführung</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-8 rounded-lg bg-neutral-800/50 border border-neutral-700/50 hover:border-primary/50 transition-all duration-300 animate-on-scroll">
+                    <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Faire Preise</h3>
+                    <p class="text-neutral-400">Transparente Kalkulation und faire Preisgestaltung für alle unsere Leistungen</p>
+                </div>
+
+                <div class="p-8 rounded-lg bg-neutral-800/50 border border-neutral-700/50 hover:border-primary/50 transition-all duration-300 animate-on-scroll delay-100">
+                    <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Fachkompetenz</h3>
+                    <p class="text-neutral-400">Erfahrene Experten mit fundiertem Fachwissen und langjähriger Praxis</p>
+                </div>
+
+                <div class="p-8 rounded-lg bg-neutral-800/50 border border-neutral-700/50 hover:border-primary/50 transition-all duration-300 animate-on-scroll delay-200">
+                    <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Zuverlässigkeit</h3>
+                    <p class="text-neutral-400">Termintreue Ausführung und verlässliche Umsetzung Ihrer Projekte</p>
+                </div>
+
+                <div class="p-8 rounded-lg bg-neutral-800/50 border border-neutral-700/50 hover:border-primary/50 transition-all duration-300 animate-on-scroll delay-300">
+                    <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Pünktlichkeit</h3>
+                    <p class="text-neutral-400">Termingerechte Fertigstellung und schnelle Reaktionszeiten</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="bg-neutral-950 text-white py-24 md:py-32 px-6 md:px-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+
+            <!-- Section Header -->
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 md:mb-24 animate-on-scroll">
+                <div>
+                    <span class="block text-xs font-medium tracking-[0.2em] text-primary mb-4 uppercase">Unsere Leistungen</span>
+                    <h2 class="font-serif text-4xl md:text-5xl tracking-tight leading-none">
+                        SHK-Kompetenz <span class="text-neutral-600 italic">Rundum</span>
+                    </h2>
+                </div>
+                <div class="mt-8 md:mt-0">
+                    <a href="leistungen.html" class="group flex items-center gap-2 text-sm uppercase tracking-wider text-neutral-400 hover:text-white transition-colors">
+                        Alle Leistungen
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 transition-transform group-hover:translate-x-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- Service 1: Sanitärtechnik -->
+                <a href="sanitaer.html" class="group relative animate-on-scroll">
+                    <div class="relative w-full aspect-[4/3] overflow-hidden rounded-lg bg-neutral-900 mb-6">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-blue-900/40"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-white/30 group-hover:text-white/50 transition-all duration-500 group-hover:scale-110"><path d="M2 12h20"></path><path d="M20 12v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"></path><path d="m4 8 8-4 8 4"></path><path d="M16 12v4"></path></svg>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-serif text-white mb-3 group-hover:text-primary transition-colors">Sanitärtechnik Rundum</h3>
+                        <p class="text-neutral-400 mb-4 leading-relaxed">
+                            Holen Sie sich zahlreiche Ideen und bringen Sie frischen Wind in Ihr Badezimmer
+                        </p>
+                        <span class="inline-flex items-center gap-2 text-primary text-sm font-medium group-hover:gap-3 transition-all">
+                            Mehr erfahren
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Service 2: Heizungstechnik -->
+                <a href="heizung.html" class="group relative animate-on-scroll delay-100">
+                    <div class="relative w-full aspect-[4/3] overflow-hidden rounded-lg bg-neutral-900 mb-6">
+                        <div class="absolute inset-0 bg-gradient-to-br from-orange-600/20 to-red-900/40"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-white/30 group-hover:text-white/50 transition-all duration-500 group-hover:scale-110"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-serif text-white mb-3 group-hover:text-primary transition-colors">Heizungstechnik Rundum</h3>
+                        <p class="text-neutral-400 mb-4 leading-relaxed">
+                            Wir beraten Sie gerne und umfassend zu allen Themen rund um Heizungen
+                        </p>
+                        <span class="inline-flex items-center gap-2 text-primary text-sm font-medium group-hover:gap-3 transition-all">
+                            Mehr erfahren
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Service 3: Klimatechnik -->
+                <a href="klima.html" class="group relative animate-on-scroll delay-200">
+                    <div class="relative w-full aspect-[4/3] overflow-hidden rounded-lg bg-neutral-900 mb-6">
+                        <div class="absolute inset-0 bg-gradient-to-br from-cyan-600/20 to-teal-900/40"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-white/30 group-hover:text-white/50 transition-all duration-500 group-hover:scale-110"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"></path><path d="M9.6 4.6A2 2 0 1 1 11 8H2"></path><path d="M12.6 19.4A2 2 0 1 0 14 16H2"></path></svg>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-serif text-white mb-3 group-hover:text-primary transition-colors">Klimatechnik Rundum</h3>
+                        <p class="text-neutral-400 mb-4 leading-relaxed">
+                            Ob man sich in einem Raum wohlfühlt, hängt von verschiedenen Klimafaktoren ab
+                        </p>
+                        <span class="inline-flex items-center gap-2 text-primary text-sm font-medium group-hover:gap-3 transition-all">
+                            Mehr erfahren
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                        </span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Heating Calculator CTA -->
+    <section class="bg-primary text-white py-20 px-6 md:px-12 border-t border-primary/20">
+        <div class="max-w-4xl mx-auto text-center animate-on-scroll">
+            <div class="mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mx-auto text-white/90"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect><path d="M12 18h.01"></path></svg>
+            </div>
+            <h2 class="font-serif text-3xl md:text-5xl tracking-tight mb-6">Heizungsrechner</h2>
+            <p class="text-xl md:text-2xl font-light mb-8 text-white/90">
+                In fünf Minuten zu Ihrem unverbindlichen Angebot!
+            </p>
+            <a href="kontakt.html" class="inline-block bg-white text-primary px-8 py-4 rounded-full text-base font-semibold hover:bg-neutral-100 transition-all duration-300 shadow-xl">
+                Jetzt Angebot anfordern
+            </a>
+        </div>
+    </section>
+
+    <!-- Jobs Section -->
+    <section class="bg-neutral-900 text-neutral-200 py-20 md:py-28 px-6 md:px-12 border-t border-white/5">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12 animate-on-scroll">
+                <span class="block text-xs font-medium tracking-[0.2em] text-primary mb-4 uppercase">Karriere</span>
+                <h2 class="font-serif text-3xl md:text-4xl tracking-tight text-white mb-4">
+                    Aktuell suchen wir
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-6 rounded-lg bg-neutral-800/50 border border-neutral-700/50 hover:border-primary/50 transition-all duration-300 animate-on-scroll">
+                    <h3 class="text-lg font-semibold text-white mb-2">Anlagenmechaniker SHK</h3>
+                    <p class="text-neutral-400 text-sm mb-4">(m/w/d)</p>
+                    <a href="jobs.html" class="text-primary text-sm font-medium hover:underline">Jetzt bewerben →</a>
+                </div>
+
+                <div class="p-6 rounded-lg bg-neutral-800/50 border border-neutral-700/50 hover:border-primary/50 transition-all duration-300 animate-on-scroll delay-100">
+                    <h3 class="text-lg font-semibold text-white mb-2">Kundendienstleiter SHK</h3>
+                    <p class="text-neutral-400 text-sm mb-4">(m/w/d)</p>
+                    <a href="jobs.html" class="text-primary text-sm font-medium hover:underline">Jetzt bewerben →</a>
+                </div>
+
+                <div class="p-6 rounded-lg bg-neutral-800/50 border border-neutral-700/50 hover:border-primary/50 transition-all duration-300 animate-on-scroll delay-200">
+                    <h3 class="text-lg font-semibold text-white mb-2">SHK-Meister</h3>
+                    <p class="text-neutral-400 text-sm mb-4">(m/w/d)</p>
+                    <a href="jobs.html" class="text-primary text-sm font-medium hover:underline">Jetzt bewerben →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opening Hours Section -->
+    <section class="bg-neutral-950 text-neutral-200 py-16 px-6 md:px-12 border-t border-white/5">
+        <div class="max-w-4xl mx-auto text-center animate-on-scroll">
+            <h3 class="text-2xl font-serif text-white mb-8">Öffnungszeiten</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-lg">
+                <div class="p-6 bg-neutral-900/50 rounded-lg border border-neutral-800">
+                    <div class="font-medium text-white mb-2">Mo - Do</div>
+                    <div class="text-neutral-400">07:00 - 12:00 Uhr / 13:00 - 16:00 Uhr</div>
+                </div>
+                <div class="p-6 bg-neutral-900/50 rounded-lg border border-neutral-800">
+                    <div class="font-medium text-white mb-2">Fr</div>
+                    <div class="text-neutral-400">07:00 - 13:00 Uhr</div>
+                </div>
+            </div>
+            <p class="mt-8 text-neutral-400">
+                <span class="text-white font-medium">Rufen Sie uns an:</span>
+                <a href="tel:+495617013898" class="text-primary hover:underline">+49 561 7013898</a>
+            </p>
+            <p class="text-neutral-500 mt-2">Wir sind gerne für Sie da.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-neutral-400 pt-20 pb-12 px-6 md:px-12 border-t border-neutral-900">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-16">
+
+                <!-- Brand -->
+                <div class="md:col-span-1 animate-on-scroll">
+                    <div class="text-2xl text-white font-bold mb-6">
+                        <span class="text-primary">Eisenhuth</span> GmbH
+                    </div>
+                    <p class="text-sm leading-relaxed mb-6">
+                        Ihr zuverlässiger Partner für Sanitär, Heizung, Elektro und Klimatechnik in Kassel und Umgebung.
+                    </p>
+                    <div class="inline-block px-3 py-1 bg-primary/20 border border-primary/30 rounded text-primary text-xs font-medium">
+                        e-masters zertifiziert
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="animate-on-scroll delay-100">
+                    <h4 class="text-white text-sm font-semibold uppercase tracking-widest mb-6">Navigation</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="ueber-uns.html" class="hover:text-white transition-colors">Über Uns</a></li>
+                        <li><a href="leistungen.html" class="hover:text-white transition-colors">Leistungen</a></li>
+                        <li><a href="beratung.html" class="hover:text-white transition-colors">Beratung</a></li>
+                        <li><a href="jobs.html" class="hover:text-white transition-colors">Karriere</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="animate-on-scroll delay-200">
+                    <h4 class="text-white text-sm font-semibold uppercase tracking-widest mb-6">Leistungen</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="sanitaer.html" class="hover:text-white transition-colors">Sanitärtechnik</a></li>
+                        <li><a href="heizung.html" class="hover:text-white transition-colors">Heizungstechnik</a></li>
+                        <li><a href="klima.html" class="hover:text-white transition-colors">Klimatechnik</a></li>
+                        <li><a href="erneuerbare-energien.html" class="hover:text-white transition-colors">Erneuerbare Energien</a></li>
+                        <li><a href="notdienst.html" class="hover:text-white transition-colors">Notdienst</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="animate-on-scroll delay-300">
+                    <h4 class="text-white text-sm font-semibold uppercase tracking-widest mb-6">Kontakt</h4>
+                    <address class="not-italic text-sm space-y-3">
+                        <p>
+                            <strong class="text-white">Eisenhuth GmbH</strong><br>
+                            An der Schlade 5 b<br>
+                            34123 Kassel
+                        </p>
+                        <p>
+                            <a href="tel:+495617013898" class="hover:text-white transition-colors flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                +49 561 7013898
+                            </a>
+                        </p>
+                        <p>
+                            <a href="kontakt.html" class="text-primary hover:text-accent transition-colors font-medium">
+                                Kontaktformular →
+                            </a>
+                        </p>
+                    </address>
+                </div>
+
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-neutral-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-neutral-600 animate-on-scroll">
+                <p>&copy; 2024 Eisenhuth GmbH. Alle Rechte vorbehalten.</p>
+                <div class="flex gap-6">
+                    <a href="impressum.html" class="hover:text-neutral-400 transition-colors">Impressum</a>
+                    <a href="datenschutz.html" class="hover:text-neutral-400 transition-colors">Datenschutz</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/495617013898" target="_blank" class="whatsapp-float" aria-label="WhatsApp kontaktieren">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </a>
+
+    <script>
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.remove('hidden');
+        });
+
+        document.getElementById('mobile-menu-close').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        });
+    </script>
+</body>
+</html>
