@@ -69,12 +69,25 @@
             -webkit-text-stroke: 1px rgba(255,255,255,0.2);
             color: transparent;
         }
+        @keyframes textGlow {
+            0%, 100% {
+                color: rgb(212, 212, 212);
+                text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+            }
+            50% {
+                color: rgb(255, 255, 255);
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
+            }
+        }
+        .animate-text-glow {
+            animation: textGlow 3s ease-in-out infinite;
+        }
     </style>
 </head>
 <body class="bg-neutral-950 text-neutral-200 overflow-x-hidden selection:bg-white/20">
 
     <!-- Background (image) - Modern apartment with warm orange ambient LED lighting and AC unit -->
-    <div class="fixed top-0 w-full h-screen bg-cover bg-center -z-10" style="background-image: url('images/hero-eisenhuth.jpg'); mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent)" data-alpha-mask="80"></div>
+    <div class="fixed top-0 w-full h-screen bg-cover bg-center -z-10" style="background-image: url('images/hero-eisebhuth.jpg'); mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent)" data-alpha-mask="80"></div>
 
     <!-- Hero Section -->
     <section class="relative w-full h-screen overflow-hidden flex flex-col justify-between">
@@ -157,7 +170,7 @@
                 <span class="block text-xs font-medium tracking-[0.2em] text-neutral-500 mb-4 uppercase">Unser Anspruch</span>
                 <h3 class="font-serif text-4xl md:text-6xl tracking-tight mb-8 text-white">SHK-Exzellenz<br>seit Jahren</h3>
                 <div class="h-[50vh] md:h-[60vh] w-full bg-neutral-800 rounded-2xl overflow-hidden relative group cursor-none shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1600&q=80" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-80 group-hover:opacity-100" alt="Modern renoviertes Badezimmer">
+                    <img src="images/bathroom.jpg" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-80 group-hover:opacity-100" alt="Modern renoviertes Badezimmer">
                     <!-- Hover Badge -->
                     <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <div class="w-24 h-24 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20">
@@ -175,21 +188,21 @@
                     <li class="flex items-center justify-between group cursor-pointer border-t border-neutral-800 py-8 hover:bg-white/5 transition-colors px-4 -mx-4 rounded-sm">
                         <div class="flex items-center gap-4">
                             <span class="text-neutral-600 font-serif italic text-xl">01</span>
-                            <span class="text-lg font-normal text-neutral-300 group-hover:text-white transition-colors">Faire Preise</span>
+                            <span class="text-lg font-normal text-neutral-300 group-hover:text-white transition-colors animate-text-glow">Faire Preise</span>
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-neutral-500 opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0 duration-300"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                     </li>
                     <li class="flex items-center justify-between group cursor-pointer border-t border-neutral-800 py-8 hover:bg-white/5 transition-colors px-4 -mx-4 rounded-sm">
                         <div class="flex items-center gap-4">
                             <span class="text-neutral-600 font-serif italic text-xl">02</span>
-                            <span class="text-lg font-normal text-neutral-300 group-hover:text-white transition-colors">Fachkompetenz</span>
+                            <span class="text-lg font-normal text-neutral-300 group-hover:text-white transition-colors animate-text-glow">Fachkompetenz</span>
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-neutral-500 opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0 duration-300"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                     </li>
                     <li class="flex items-center justify-between group cursor-pointer border-t border-b border-neutral-800 py-8 hover:bg-white/5 transition-colors px-4 -mx-4 rounded-sm">
                         <div class="flex items-center gap-4">
                             <span class="text-neutral-600 font-serif italic text-xl">03</span>
-                            <span class="text-lg font-normal text-neutral-300 group-hover:text-white transition-colors">Zuverlässigkeit</span>
+                            <span class="text-lg font-normal text-neutral-300 group-hover:text-white transition-colors animate-text-glow">Zuverlässigkeit</span>
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-neutral-500 opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0 duration-300"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                     </li>
@@ -198,108 +211,61 @@
         </div>
     </section>
 
-    <!-- Services Section (replaces Selected Projects) -->
+    <!-- Wir über uns Section -->
     <section class="bg-neutral-950 text-white py-24 md:py-32 px-6 md:px-12 border-t border-white/5">
-        <div class="max-w-7xl mx-auto">
+        <div class="max-w-5xl mx-auto">
 
             <!-- Section Header -->
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 md:mb-24 animate-on-scroll">
-                <div>
-                    <span class="block text-xs font-medium tracking-[0.2em] text-neutral-500 mb-4 uppercase">Portfolio</span>
-                    <h2 class="font-serif text-4xl md:text-5xl tracking-tight leading-none">
-                        Unsere <span class="text-neutral-600 italic">Leistungen</span>
-                    </h2>
-                </div>
-                <div class="mt-8 md:mt-0">
-                    <a href="leistungen-new.html" class="group flex items-center gap-2 text-sm uppercase tracking-wider text-neutral-400 hover:text-white transition-colors">
-                        Alle Leistungen
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 transition-transform group-hover:translate-x-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                    </a>
-                </div>
+            <div class="mb-12 animate-on-scroll text-center">
+                <h2 class="font-serif text-5xl md:text-6xl tracking-tight leading-tight mb-6">
+                    Wir über <span class="text-neutral-600 italic">uns</span>
+                </h2>
             </div>
 
-            <!-- Services Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
+            <!-- Content -->
+            <div class="space-y-8 animate-on-scroll delay-100">
 
-                <!-- Service 1: Sanitärtechnik (Large) -->
-                <div class="md:col-span-8 group relative animate-on-scroll">
-                    <a href="sanitaer-new.html" class="block">
-                        <div class="relative w-full aspect-[4/3] md:aspect-[16/9] overflow-hidden rounded-2xl bg-neutral-900 shadow-2xl">
-                            <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=1600&q=80" alt="Sanitärtechnik" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
-
-                            <!-- Content Overlay -->
-                            <div class="absolute bottom-0 left-0 p-6 md:p-10 w-full">
-                                <div class="flex justify-between items-end transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                                    <div>
-                                        <div class="flex items-center gap-3 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                                            <span class="px-2 py-1 bg-white/20 backdrop-blur-md text-[10px] uppercase tracking-widest rounded-full">Sanitär</span>
-                                            <span class="text-neutral-300 text-xs tracking-wide">Bad & Wasser</span>
-                                        </div>
-                                        <h3 class="text-2xl md:text-4xl font-serif text-white mb-1">Sanitärtechnik Rundum</h3>
-                                        <p class="text-neutral-400 text-sm md:text-base font-light">Badezimmer, Wellness, Rohrleitungen</p>
-                                    </div>
-                                    <div class="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center bg-white/0 group-hover:bg-white text-white group-hover:text-black transition-all duration-300">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform duration-300"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+                <!-- Das sind wir -->
+                <div>
+                    <h3 class="font-serif text-3xl md:text-4xl tracking-tight mb-6 text-white">Das sind wir</h3>
+                    <p class="text-lg md:text-xl font-light leading-relaxed text-neutral-300 mb-4">
+                        Wir sind die Fachleute für Ihr Haus und Ihre Wohnung.
+                    </p>
+                    <p class="text-lg md:text-xl font-light leading-relaxed text-neutral-300 mb-8">
+                        Seit vielen Jahren bieten wir Ihnen kompetenten Service rund um die Haustechnik.
+                    </p>
                 </div>
 
-                <!-- Service 2: Heizungstechnik (Vertical) -->
-                <div class="md:col-span-4 group relative animate-on-scroll delay-100">
-                    <a href="heizung-new.html" class="block">
-                        <div class="relative w-full aspect-[3/4] md:aspect-auto md:h-full overflow-hidden rounded-2xl bg-neutral-900 shadow-2xl">
-                            <img src="https://images.unsplash.com/photo-1516733968668-dbdce39c4651?w=1000&q=80" alt="Heizungstechnik" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
-
-                            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full">
-                                <div class="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                                    <div class="flex items-center gap-3 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                                        <span class="px-2 py-1 bg-white/20 backdrop-blur-md text-[10px] uppercase tracking-widest rounded-full">Heizung</span>
-                                    </div>
-                                    <h3 class="text-2xl font-serif text-white mb-1">Heizungstechnik Rundum</h3>
-                                    <p class="text-neutral-400 text-sm font-light">Zentralheizung, Fußbodenheizung</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+                <!-- History & Expertise -->
+                <div class="space-y-6 text-neutral-400 leading-relaxed">
+                    <ul class="space-y-6 list-none">
+                        <li class="flex gap-4">
+                            <span class="text-neutral-600 font-serif text-xl flex-shrink-0">•</span>
+                            <p class="text-base md:text-lg">
+                                1960 gegründet von Hilmar Eisenhuth als reiner Elektroinstallationsbetrieb blickt die Firma Eisenhuth auf eine lange Firmengeschichte zurück. Mit der Übernahme durch die Geschäftsführer Frank Eisenhuth & Helmut Sohl im Jahr 2007 liegen nun die Unternehmensschwerpunkte in den Bereichen Sanitär und Heizung. Bei unserer täglichen Arbeit sind wir als Meisterbetrieb bestens vertraut mit der Renovierung, Reparatur, Planung, dem Um-/Neubau von modernen als auch barrierefreien Bädern sowie energieeffizienten Heizungsanlagen.
+                            </p>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="text-neutral-600 font-serif text-xl flex-shrink-0">•</span>
+                            <p class="text-base md:text-lg">
+                                Unsere Fachleute kümmern sich schnell und zuverlässig um Planung und Durchführung von Neuinstallationen, Wartungen oder Reparaturen.
+                            </p>
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- Service 3: Klimatechnik -->
-                <div class="md:col-span-4 group relative animate-on-scroll">
-                    <a href="klima-new.html" class="block">
-                        <div class="relative w-full aspect-square overflow-hidden rounded-2xl bg-neutral-900 shadow-2xl">
-                            <img src="https://images.unsplash.com/photo-1635274943777-408d96d643e3?w=1000&q=80" alt="Klimatechnik" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
-
-                            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full">
-                                <h3 class="text-xl md:text-2xl font-serif text-white mb-1">Klimatechnik Rundum</h3>
-                                <p class="text-neutral-400 text-sm font-light">Lüftung & Klimaanlagen</p>
-                            </div>
-                        </div>
-                    </a>
+                <!-- Closing Statement -->
+                <div class="pt-6">
+                    <p class="text-lg md:text-xl font-light leading-relaxed text-neutral-300">
+                        Wir setzen auf Qualität, Sicherheit und Energie - Denn Ihre Zufriedenheit ist uns sehr wichtig! Wir freuen uns auf Sie.
+                    </p>
                 </div>
 
-                <!-- Service 4: Erneuerbare Energien (Wide) -->
-                <div class="md:col-span-8 group relative animate-on-scroll delay-100">
-                    <a href="erneuerbare-energien-new.html" class="block">
-                        <div class="relative w-full aspect-video md:aspect-auto md:h-full overflow-hidden rounded-2xl bg-neutral-900 shadow-2xl">
-                            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1600&q=80" alt="Erneuerbare Energien" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
-
-                            <div class="absolute bottom-0 left-0 p-6 md:p-10 w-full flex justify-between items-end">
-                                <div>
-                                    <h3 class="text-2xl md:text-3xl font-serif text-white mb-1">Erneuerbare Energien</h3>
-                                    <p class="text-neutral-400 text-sm font-light">Wärmepumpen, Solar, Photovoltaik</p>
-                                </div>
-                                <div class="hidden md:block opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <span class="text-xs uppercase tracking-widest border-b border-white pb-1">Mehr erfahren</span>
-                                </div>
-                            </div>
-                        </div>
+                <!-- CTA Button -->
+                <div class="pt-8 text-center">
+                    <a href="leistungen-new.html" class="inline-flex items-center gap-3 px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-white transition-all duration-300 group">
+                        <span class="text-sm uppercase tracking-widest">Unsere Leistungen entdecken</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 transition-transform group-hover:translate-x-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                     </a>
                 </div>
 

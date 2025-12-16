@@ -113,96 +113,152 @@
     </section>
 
     <section class="bg-neutral-900 py-24 md:py-32 px-6 md:px-12">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
+        <div class="max-w-7xl mx-auto space-y-16 md:space-y-24">
 
-                <!-- Sanitär (Large) -->
-                <div class="md:col-span-8 group relative animate-on-scroll">
-                    <a href="sanitaer-new.html" class="block">
-                        <div class="relative w-full aspect-[4/3] md:aspect-[16/9] overflow-hidden rounded-sm bg-neutral-800">
-                            <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=1600&q=80" alt="Sanitärtechnik" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
-                            <div class="absolute bottom-0 left-0 p-6 md:p-10 w-full">
-                                <div class="flex justify-between items-end transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                                    <div>
-                                        <div class="flex items-center gap-3 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                                            <span class="px-2 py-1 bg-white/20 backdrop-blur-md text-[10px] uppercase tracking-widest rounded-full">Sanitär</span>
-                                        </div>
-                                        <h3 class="text-2xl md:text-4xl font-serif text-white mb-1">Sanitärtechnik</h3>
-                                        <p class="text-neutral-400 text-sm md:text-base font-light">Badezimmer, Wellness, Rohrleitungen</p>
-                                    </div>
-                                    <div class="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center bg-white/0 group-hover:bg-white text-white group-hover:text-black transition-all duration-300">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform duration-300"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+            <!-- Service 1: Heizungsrechner - Image LEFT, Text RIGHT -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center animate-on-scroll">
+                <div class="order-1 md:order-1 group relative overflow-hidden rounded-2xl shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?w=1200&q=80" alt="Heizungsrechner" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                 </div>
-
-                <!-- Heizung (Vertical) -->
-                <div class="md:col-span-4 group relative animate-on-scroll delay-100">
-                    <a href="heizung-new.html" class="block">
-                        <div class="relative w-full aspect-[3/4] overflow-hidden rounded-sm bg-neutral-800">
-                            <img src="https://images.unsplash.com/photo-1516733968668-dbdce39c4651?w=1000&q=80" alt="Heizungstechnik" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
-                            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full">
-                                <div class="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                                    <div class="flex items-center gap-3 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                                        <span class="px-2 py-1 bg-white/20 backdrop-blur-md text-[10px] uppercase tracking-widest rounded-full">Heizung</span>
-                                    </div>
-                                    <h3 class="text-xl md:text-2xl font-serif text-white mb-1">Heizungstechnik</h3>
-                                    <p class="text-neutral-400 text-sm font-light">Moderne Wärme</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+                <div class="order-2 md:order-2 space-y-4">
+                    <h3 class="font-serif text-4xl md:text-5xl text-white">Heizungsrechner</h3>
+                    <p class="text-neutral-300 text-lg leading-relaxed">
+                        Berechnen Sie mit unserem intelligenten Heizungsrechner die optimale Heizlösung für Ihr Gebäude.
+                        Wir analysieren Ihren Energiebedarf und erstellen ein maßgeschneidertes Konzept für maximale Effizienz.
+                        Profitieren Sie von modernster Technologie und reduzieren Sie Ihre Heizkosten nachhaltig.
+                    </p>
                 </div>
-
-                <!-- Klima (Vertical) -->
-                <div class="md:col-span-4 group relative animate-on-scroll delay-200">
-                    <a href="klima-new.html" class="block">
-                        <div class="relative w-full aspect-[3/4] overflow-hidden rounded-sm bg-neutral-800">
-                            <img src="https://images.unsplash.com/photo-1635274943777-408d96d643e3?w=1000&q=80" alt="Klimatechnik" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
-                            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full">
-                                <div class="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                                    <div class="flex items-center gap-3 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                                        <span class="px-2 py-1 bg-white/20 backdrop-blur-md text-[10px] uppercase tracking-widest rounded-full">Klima</span>
-                                    </div>
-                                    <h3 class="text-xl md:text-2xl font-serif text-white mb-1">Klimatechnik</h3>
-                                    <p class="text-neutral-400 text-sm font-light">Perfekte Luft</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Erneuerbare Energien (Large) -->
-                <div class="md:col-span-8 group relative animate-on-scroll delay-300">
-                    <a href="beratung-new.html" class="block">
-                        <div class="relative w-full aspect-[4/3] md:aspect-[16/9] overflow-hidden rounded-sm bg-neutral-800">
-                            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1600&q=80" alt="Erneuerbare Energien" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
-                            <div class="absolute bottom-0 left-0 p-6 md:p-10 w-full">
-                                <div class="flex justify-between items-end transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                                    <div>
-                                        <div class="flex items-center gap-3 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                                            <span class="px-2 py-1 bg-white/20 backdrop-blur-md text-[10px] uppercase tracking-widest rounded-full">Energie</span>
-                                        </div>
-                                        <h3 class="text-2xl md:text-4xl font-serif text-white mb-1">Erneuerbare Energien</h3>
-                                        <p class="text-neutral-400 text-sm md:text-base font-light">Wärmepumpen, Solar, Photovoltaik</p>
-                                    </div>
-                                    <div class="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center bg-white/0 group-hover:bg-white text-white group-hover:text-black transition-all duration-300">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform duration-300"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
             </div>
+
+            <!-- Service 2: Sanitär & Heizung - Text LEFT, Image RIGHT -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center animate-on-scroll">
+                <div class="order-2 md:order-1 space-y-4">
+                    <h3 class="font-serif text-4xl md:text-5xl text-white">Sanitär & Heizung</h3>
+                    <p class="text-neutral-300 text-lg leading-relaxed">
+                        Von der klassischen Heizungsinstallation bis zur modernen Sanitäranlage bieten wir Ihnen umfassende Lösungen.
+                        Unsere Experten planen und installieren hocheffiziente Systeme, die perfekt auf Ihre Bedürfnisse abgestimmt sind.
+                        Verlassen Sie sich auf jahrelange Erfahrung und höchste Qualitätsstandards.
+                    </p>
+                </div>
+                <div class="order-1 md:order-2 group relative overflow-hidden rounded-2xl shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&q=80" alt="Sanitär & Heizung" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                </div>
+            </div>
+
+            <!-- Service 3: Badezimmer - Image LEFT, Text RIGHT -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center animate-on-scroll">
+                <div class="order-1 md:order-1 group relative overflow-hidden rounded-2xl shadow-2xl">
+                    <img src="images/bathroom.jpg" alt="Badezimmer" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                </div>
+                <div class="order-2 md:order-2 space-y-4">
+                    <h3 class="font-serif text-4xl md:text-5xl text-white">Badezimmer</h3>
+                    <p class="text-neutral-300 text-lg leading-relaxed">
+                        Verwandeln Sie Ihr Badezimmer in eine luxuriöse Wellness-Oase.
+                        Wir gestalten traumhafte Bäder mit erstklassigen Materialien, durchdachter Planung und exzellenter Handwerkskunst.
+                        Von der Komplettsanierung bis zur eleganten Neugestaltung – wir realisieren Ihre Wünsche mit Liebe zum Detail.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Service 4: Kundendienst & Notdienst - Text LEFT, Image RIGHT -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center animate-on-scroll">
+                <div class="order-2 md:order-1 space-y-4">
+                    <h3 class="font-serif text-4xl md:text-5xl text-white">Kundendienst & Notdienst</h3>
+                    <p class="text-neutral-300 text-lg leading-relaxed">
+                        Unser 24/7-Notdienst steht Ihnen bei Heizungsausfällen und Wasserschäden jederzeit zur Verfügung.
+                        Schnelle Reaktionszeiten und kompetente Hilfe sind garantiert – auch an Wochenenden und Feiertagen.
+                        Verlassen Sie sich auf unseren zuverlässigen Service, wenn es darauf ankommt.
+                    </p>
+                </div>
+                <div class="order-1 md:order-2 group relative overflow-hidden rounded-2xl shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&q=80" alt="Kundendienst & Notdienst" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                </div>
+            </div>
+
+            <!-- Service 5: Rohrbruchreparatur - Image LEFT, Text RIGHT -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center animate-on-scroll">
+                <div class="order-1 md:order-1 group relative overflow-hidden rounded-2xl shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=1200&q=80" alt="Rohrbruchreparatur" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                </div>
+                <div class="order-2 md:order-2 space-y-4">
+                    <h3 class="font-serif text-4xl md:text-5xl text-white">Rohrbruchreparatur</h3>
+                    <p class="text-neutral-300 text-lg leading-relaxed">
+                        Bei Rohrbrüchen zählt jede Minute – unser Spezialistenteam behebt Leckagen schnell und professionell.
+                        Mit modernster Ortungstechnik lokalisieren wir Schäden präzise und reparieren sie fachgerecht.
+                        Minimale Eingriffe, maximale Wirkung – für Ihren Schutz und Ihre Sicherheit.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Service 6: Tankanlagen & -reinigung - Text LEFT, Image RIGHT -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center animate-on-scroll">
+                <div class="order-2 md:order-1 space-y-4">
+                    <h3 class="font-serif text-4xl md:text-5xl text-white">Tankanlagen & -reinigung</h3>
+                    <p class="text-neutral-300 text-lg leading-relaxed">
+                        Professionelle Wartung und Reinigung Ihrer Öltanks und Tankanlagen verlängern deren Lebensdauer erheblich.
+                        Wir führen regelmäßige Inspektionen durch, beseitigen Ablagerungen und sorgen für optimale Betriebssicherheit.
+                        Umweltgerecht, normkonform und zuverlässig – Ihre Tankanlagen in besten Händen.
+                    </p>
+                </div>
+                <div class="order-1 md:order-2 group relative overflow-hidden rounded-2xl shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1200&q=80" alt="Tankanlagen & -reinigung" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                </div>
+            </div>
+
+            <!-- Service 7: Förderungen & Beratung - Image LEFT, Text RIGHT -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center animate-on-scroll">
+                <div class="order-1 md:order-1 group relative overflow-hidden rounded-2xl shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80" alt="Förderungen & Beratung" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                </div>
+                <div class="order-2 md:order-2 space-y-4">
+                    <h3 class="font-serif text-4xl md:text-5xl text-white">Förderungen & Beratung</h3>
+                    <p class="text-neutral-300 text-lg leading-relaxed">
+                        Nutzen Sie staatliche Fördergelder optimal für Ihre Heizungsmodernisierung oder energetische Sanierung.
+                        Wir beraten Sie umfassend zu allen Förderprogrammen und unterstützen Sie bei der Antragsstellung.
+                        Sparen Sie bares Geld und investieren Sie clever in die Zukunft Ihrer Immobilie.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Service 8: Staubfreie Arbeiten - Text LEFT, Image RIGHT -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center animate-on-scroll">
+                <div class="order-2 md:order-1 space-y-4">
+                    <h3 class="font-serif text-4xl md:text-5xl text-white">Staubfreie Arbeiten</h3>
+                    <p class="text-neutral-300 text-lg leading-relaxed">
+                        Dank modernster Absaugtechnik führen wir Sanierungen nahezu staubfrei durch – für saubere Räume und gesunde Luft.
+                        Ideal für bewohnte Objekte, Praxen und sensible Bereiche, wo Sauberkeit höchste Priorität hat.
+                        Erleben Sie Handwerksarbeit auf höchstem Niveau ohne lästige Verschmutzungen.
+                    </p>
+                </div>
+                <div class="order-1 md:order-2 group relative overflow-hidden rounded-2xl shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&q=80" alt="Staubfreie Arbeiten" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                </div>
+            </div>
+
+            <!-- Service 9: Haus- & Gebäudecheck - Image LEFT, Text RIGHT -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center animate-on-scroll">
+                <div class="order-1 md:order-1 group relative overflow-hidden rounded-2xl shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80" alt="Haus- & Gebäudecheck" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                </div>
+                <div class="order-2 md:order-2 space-y-4">
+                    <h3 class="font-serif text-4xl md:text-5xl text-white">Haus- & Gebäudecheck</h3>
+                    <p class="text-neutral-300 text-lg leading-relaxed">
+                        Unser umfassender Gebäudecheck deckt versteckte Mängel auf und zeigt Optimierungspotenziale bei Heizung und Sanitär.
+                        Sie erhalten einen detaillierten Bericht mit konkreten Handlungsempfehlungen und Kostenschätzungen.
+                        Vorsorge ist besser als Nachsorge – schützen Sie Ihre Investition mit regelmäßigen Inspektionen.
+                    </p>
+                </div>
+            </div>
+
         </div>
     </section>
 
