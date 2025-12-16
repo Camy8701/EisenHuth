@@ -82,6 +82,17 @@
         .animate-text-glow {
             animation: textGlow 3s ease-in-out infinite;
         }
+        /* Form input autocomplete styling */
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus {
+            -webkit-text-fill-color: white !important;
+            -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.2) inset !important;
+            transition: background-color 5000s ease-in-out 0s;
+        }
     </style>
 </head>
 <body class="bg-neutral-950 text-neutral-200 overflow-x-hidden selection:bg-white/20">
@@ -136,20 +147,39 @@
         <!-- Main Content Area -->
         <div class="flex-grow flex flex-col md:pb-0 z-10 pb-12 relative justify-end">
 
-            <!-- Description Card with Liquid Glass Effect -->
-            <div class="absolute top-[20%] md:top-auto md:bottom-[20%] right-6 md:right-12 w-[90%] md:w-[32rem] p-8 md:p-10 rounded-2xl animate-on-scroll shadow-2xl" style="--fx-filter: blur(12px) liquid-glass(2, 5) saturate(1.1); background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.05);">
-                <h2 class="font-serif italic text-3xl md:text-4xl leading-tight mb-6 tracking-tight text-white">
+            <!-- Contact Form Card with Enhanced Contrast -->
+            <div class="absolute top-[10%] md:top-[15%] left-6 md:left-12 w-[90%] md:w-[32rem] p-8 md:p-10 rounded-2xl animate-on-scroll shadow-2xl" style="--fx-filter: blur(12px) liquid-glass(2, 5) saturate(1.1); background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(20px);">
+                <h2 class="font-serif italic text-2xl md:text-3xl leading-tight mb-6 tracking-tight text-white">
                     Professionelle SHK-Lösungen
                     in höchster Qualität
                 </h2>
-                <p class="text-base md:text-lg font-light leading-relaxed opacity-90 text-neutral-200">
-                    Willkommen bei Eisenhuth GmbH. Als SHK-Betrieb sind wir Ihr Partner in Kassel für Sanitär, Heizung, Elektro und Klimatechnik. Wir garantieren Ihnen beste Qualität, faire Preise und termintreue Ausführung.
+                <p class="text-sm md:text-base font-light leading-relaxed mb-6 text-white">
+                    Willkommen bei Eisenhuth GmbH. Als SHK-Betrieb sind wir Ihr Partner in Kassel für Sanitär, Heizung, Elektro und Klimatechnik.
                 </p>
+
+                <!-- Contact Form -->
+                <form class="space-y-4" action="#" method="POST">
+                    <div>
+                        <input type="text" name="name" placeholder="Ihr Name" required class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all">
+                    </div>
+                    <div>
+                        <input type="email" name="email" placeholder="Ihre E-Mail" required class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all">
+                    </div>
+                    <div>
+                        <input type="tel" name="phone" placeholder="Ihre Telefonnummer" class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all">
+                    </div>
+                    <div>
+                        <textarea name="message" placeholder="Ihre Nachricht" rows="3" class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all resize-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-white text-black px-6 py-3 rounded-lg text-sm font-medium hover:bg-neutral-200 transition-colors tracking-wide">
+                        ANFRAGE SENDEN
+                    </button>
+                </form>
             </div>
 
             <!-- Massive Title -->
             <div class="relative w-full px-4 md:px-8 mt-auto z-0 pointer-events-none select-none">
-                <h1 class="font-serif text-[16vw] md:text-[20vw] leading-[0.75] tracking-tight text-white mix-blend-overlay opacity-90 animate-on-scroll whitespace-nowrap overflow-visible">
+                <h1 class="font-serif text-[16vw] md:text-[20vw] leading-[0.75] tracking-tight text-white mix-blend-overlay opacity-90 animate-on-scroll whitespace-nowrap overflow-visible" style="margin-left: -10%;">
                     EISENHUTH
                 </h1>
             </div>
