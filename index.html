@@ -93,6 +93,15 @@
             -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.2) inset !important;
             transition: background-color 5000s ease-in-out 0s;
         }
+        /* Language Switcher Active State */
+        .lang-active {
+            background-color: white !important;
+            color: black !important;
+        }
+        .lang-active-mobile {
+            background-color: white !important;
+            color: black !important;
+        }
     </style>
 </head>
 <body class="bg-neutral-950 text-neutral-200 overflow-x-hidden selection:bg-white/20">
@@ -111,14 +120,24 @@
             <div class="text-2xl md:text-3xl text-white tracking-tight font-serif italic">Eisenhuth GmbH</div>
 
             <div class="flex items-center gap-8">
-                <div class="hidden md:flex gap-6 text-sm font-medium tracking-wide">
-                    <a href="index.html" class="opacity-100 cursor-pointer border-b border-white pb-0.5 text-white">Home</a>
-                    <a href="leistungen.html" class="opacity-50 hover:opacity-100 cursor-pointer transition-opacity text-white">Leistungen</a>
-                    <a href="beratung.html" class="opacity-50 hover:opacity-100 cursor-pointer transition-opacity text-white">Beratung</a>
-                    <a href="kontakt.html" class="opacity-50 hover:opacity-100 cursor-pointer transition-opacity text-white">Kontakt</a>
+                <!-- Language Switcher -->
+                <div class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/20 bg-white/5">
+                    <button onclick="setLanguage('de')" id="lang-de" class="px-2 py-1 text-xs font-medium text-white rounded-full transition-all lang-active">
+                        DE
+                    </button>
+                    <button onclick="setLanguage('en')" id="lang-en" class="px-2 py-1 text-xs font-medium text-white/50 rounded-full hover:text-white transition-all">
+                        EN
+                    </button>
                 </div>
 
-                <button id="open-contact-modal" class="hidden md:block bg-white text-black px-6 py-2.5 rounded-full text-xs md:text-sm font-medium hover:bg-neutral-200 transition-colors tracking-wide">
+                <div class="hidden md:flex gap-6 text-sm font-medium tracking-wide">
+                    <a href="index.html" class="opacity-100 cursor-pointer border-b border-white pb-0.5 text-white" data-de="Startseite" data-en="Home">Startseite</a>
+                    <a href="leistungen.html" class="opacity-50 hover:opacity-100 cursor-pointer transition-opacity text-white" data-de="Leistungen" data-en="Services">Leistungen</a>
+                    <a href="beratung.html" class="opacity-50 hover:opacity-100 cursor-pointer transition-opacity text-white" data-de="Beratung" data-en="Consulting">Beratung</a>
+                    <a href="kontakt.html" class="opacity-50 hover:opacity-100 cursor-pointer transition-opacity text-white" data-de="Kontakt" data-en="Contact">Kontakt</a>
+                </div>
+
+                <button id="open-contact-modal" class="hidden md:block bg-white text-black px-6 py-2.5 rounded-full text-xs md:text-sm font-medium hover:bg-neutral-200 transition-colors tracking-wide" data-de="TERMIN VEREINBAREN" data-en="SCHEDULE APPOINTMENT">
                     TERMIN VEREINBAREN
                 </button>
 
@@ -137,10 +156,20 @@
                 </button>
             </div>
             <div class="flex flex-col gap-8 p-8 text-2xl">
-                <a href="index.html" class="text-white font-medium">Home</a>
-                <a href="leistungen.html" class="text-neutral-300 hover:text-white transition-colors">Leistungen</a>
-                <a href="beratung.html" class="text-neutral-300 hover:text-white transition-colors">Beratung</a>
-                <a href="kontakt.html" class="text-neutral-300 hover:text-white transition-colors">Kontakt</a>
+                <!-- Mobile Language Switcher -->
+                <div class="flex items-center gap-2 px-3 py-2 rounded-full border border-white/20 bg-white/5 w-fit mb-4">
+                    <button onclick="setLanguage('de')" class="px-3 py-1.5 text-sm font-medium text-white rounded-full transition-all lang-active-mobile">
+                        DE
+                    </button>
+                    <button onclick="setLanguage('en')" class="px-3 py-1.5 text-sm font-medium text-white/50 rounded-full hover:text-white transition-all">
+                        EN
+                    </button>
+                </div>
+
+                <a href="index.html" class="text-white font-medium" data-de="Startseite" data-en="Home">Startseite</a>
+                <a href="leistungen.html" class="text-neutral-300 hover:text-white transition-colors" data-de="Leistungen" data-en="Services">Leistungen</a>
+                <a href="beratung.html" class="text-neutral-300 hover:text-white transition-colors" data-de="Beratung" data-en="Consulting">Beratung</a>
+                <a href="kontakt.html" class="text-neutral-300 hover:text-white transition-colors" data-de="Kontakt" data-en="Contact">Kontakt</a>
             </div>
         </div>
 
@@ -304,10 +333,10 @@
                 <div class="animate-on-scroll delay-100">
                     <h4 class="text-white text-sm font-medium uppercase tracking-widest mb-6">Navigation</h4>
                     <ul class="space-y-4 text-sm">
-                        <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
-                        <li><a href="leistungen.html" class="hover:text-white transition-colors">Leistungen</a></li>
-                        <li><a href="beratung.html" class="hover:text-white transition-colors">Beratung</a></li>
-                        <li><a href="kontakt.html" class="hover:text-white transition-colors">Kontakt</a></li>
+                        <li><a href="index.html" class="hover:text-white transition-colors" data-de="Startseite" data-en="Home">Startseite</a></li>
+                        <li><a href="leistungen.html" class="hover:text-white transition-colors" data-de="Leistungen" data-en="Services">Leistungen</a></li>
+                        <li><a href="beratung.html" class="hover:text-white transition-colors" data-de="Beratung" data-en="Consulting">Beratung</a></li>
+                        <li><a href="kontakt.html" class="hover:text-white transition-colors" data-de="Kontakt" data-en="Contact">Kontakt</a></li>
                     </ul>
                 </div>
 
@@ -464,6 +493,58 @@
             if (e.key === 'Escape' && !contactModal.classList.contains('hidden')) {
                 closeModal();
             }
+        });
+
+        // Language Switcher
+        function setLanguage(lang) {
+            // Save language preference
+            localStorage.setItem('language', lang);
+
+            // Update all elements with data-de and data-en attributes
+            document.querySelectorAll('[data-de][data-en]').forEach(element => {
+                if (lang === 'de') {
+                    element.textContent = element.getAttribute('data-de');
+                } else {
+                    element.textContent = element.getAttribute('data-en');
+                }
+            });
+
+            // Update button states - Desktop
+            const deLangBtn = document.getElementById('lang-de');
+            const enLangBtn = document.getElementById('lang-en');
+
+            if (lang === 'de') {
+                deLangBtn.classList.add('lang-active');
+                deLangBtn.classList.remove('text-white/50');
+                enLangBtn.classList.remove('lang-active');
+                enLangBtn.classList.add('text-white/50');
+            } else {
+                enLangBtn.classList.add('lang-active');
+                enLangBtn.classList.remove('text-white/50');
+                deLangBtn.classList.remove('lang-active');
+                deLangBtn.classList.add('text-white/50');
+            }
+
+            // Update button states - Mobile
+            const mobileLangBtns = document.querySelectorAll('#mobile-menu button[onclick^="setLanguage"]');
+            mobileLangBtns.forEach((btn, index) => {
+                if ((index === 0 && lang === 'de') || (index === 1 && lang === 'en')) {
+                    btn.classList.add('lang-active-mobile');
+                    btn.classList.remove('text-white/50');
+                } else {
+                    btn.classList.remove('lang-active-mobile');
+                    btn.classList.add('text-white/50');
+                }
+            });
+        }
+
+        // Set German as default language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLanguage = localStorage.getItem('language') || 'de';
+            if (savedLanguage === 'en') {
+                setLanguage('en');
+            }
+            // If savedLanguage is 'de' or null, it's already in German (default)
         });
     </script>
 </body>
